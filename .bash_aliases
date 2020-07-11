@@ -1,15 +1,15 @@
 #Helper Functions
-cc() { cd "$@" && ls; }
+cc() { cd "$@" && la; }
 
 #Basic Folder Navigation
-alias .="ls"
+alias .="la"
 alias ..="cc .."
 alias ...="cc ../.."
 alias ~="cc ~"
 alias o="xdg-open ."
 
 #Edit Aliases
-alias bashrc="nano ~/.bash_aliases"
+alias bashrc="vim ~/.bash_aliases"
 alias rebash="source ~/.bashrc"
 
 #Directories
