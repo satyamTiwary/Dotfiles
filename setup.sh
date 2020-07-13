@@ -12,6 +12,16 @@ cross=$'\u2718'
 copy_count=0
 for i in "${file_names[@]}"
 do
+  # check if file exists, if not - create it
+  if [ -f "${home}/${i}" ]
+  then
+    echo "File Exists"
+  else
+    echo "${i}: ${cross} File Does Not Exists."
+    echo "File created by satyamtiwary/dotfiles/setup.sh" > ${home}/${i}
+    echo "${tick} ${home}/${i}: File created."
+  fi
+  
   diff ./"${i}" ${home}/"${i}"
   difference=$(diff ./${i} ${home}/${i})
   size=${#difference}
@@ -25,8 +35,9 @@ do
       echo "${cross} Copy Failed!"
     fi
   else
-    echo "${tick} File Already Up to date."
+    echo "${i}: ${tick} File Already Up to date."
   fi
+  echo ""
 done
 
 # If any copy was done: Reactivate the bash aliases
