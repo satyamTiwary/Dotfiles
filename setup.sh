@@ -3,7 +3,7 @@
 declare -a file_names=(".bash_aliases" ".gitconfig" ".vimrc")
 home=${1:-'~'}
 echo "Home Directory: ${home}
-"
+" 
 
 tick=$'\u2714'
 cross=$'\u2718'
@@ -15,11 +15,11 @@ do
   # check if file exists, if not - create it
   if [ -f "${home}/${i}" ]
   then
-    echo "File Exists"
+    echo "${i}:		File Exists"
   else
-    echo "${i}: ${cross} File Does Not Exists."
+    echo "${i}:		${cross} File Does Not Exists."
     echo "File created by satyamtiwary/dotfiles/setup.sh" > ${home}/${i}
-    echo "${tick} ${home}/${i}: File created."
+    echo "${i}:		${tick}  File created."
   fi
   
   diff ./"${i}" ${home}/"${i}"
@@ -29,13 +29,15 @@ do
   then
     if cp ./"${i}" ${home}/"${i}"
     then
-      echo "${tick} Copied ./${i} to ${home}/${i}"
+      echo "${i}:	${tick} Copied ./${i} to ${home}/${i}"
+      source ${home}/${i}
+      echo "${i}: 	${tick} file activated."
       copy_count=$((copy_count+1))
     else
-      echo "${cross} Copy Failed!"
+      echo "${i}:	${cross} Copy Failed!"
     fi
   else
-    echo "${i}: ${tick} File Already Up to date."
+    echo "${i}:		${tick} File Already Up to date."
   fi
   echo ""
 done
@@ -43,10 +45,9 @@ done
 # If any copy was done: Reactivate the bash aliases
 if [ "${copy_count}" -gt 0 ]
 then
-  source ~/.bash_aliases
-  echo "${tick} New aliases activated"
+  echo "${tick} ${copy_count} files modified/added and activated." 
 else
-  echo "${cross} No new aliases to be activated"
+  echo "${cross} No new file(s) modified/added"
 fi
 
 # Setup Environment Variables
