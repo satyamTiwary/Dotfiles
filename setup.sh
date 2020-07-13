@@ -1,6 +1,9 @@
 #!/bin/bash
 
 declare -a file_names=(".bash_aliases" ".gitconfig" ".vimrc")
+home=${1:-'~'}
+echo "Home Directory: ${home}
+"
 
 tick=$'\u2714'
 cross=$'\u2718'
@@ -9,14 +12,14 @@ cross=$'\u2718'
 copy_count=0
 for i in "${file_names[@]}"
 do
-  diff ./"${i}" ~/"${i}"
-  difference=$(diff ./${i} ~/${i})
+  diff ./"${i}" ${home}/"${i}"
+  difference=$(diff ./${i} ${home}/${i})
   size=${#difference}
   if [ "${size}" -gt 0 ] 
   then
-    if cp ./"${i}" ~/"${i}"
+    if cp ./"${i}" ${home}/"${i}"
     then
-      echo "${tick} Copied ./${i} to ~/${i}"
+      echo "${tick} Copied ./${i} to ${home}/${i}"
       copy_count=$((copy_count+1))
     else
       echo "${cross} Copy Failed!"
