@@ -30,6 +30,7 @@ Plug 'valloric/youcompleteme'
 Plug 'mbbill/undotree'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'cjuniet/clang-format.vim'
+Plug 'stevearc/vim-arduino'
 
 call plug#end()
 
@@ -70,3 +71,8 @@ nnoremap <silent> <Leader>- :vertical resize -5<CR>
 nnoremap <silent> <Leader>gd :YcmCompleter Goto<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
+nnoremap <leader>av :ArduinoVerify<CR>
+nnoremap <leader>au :ArduinoUpload<CR>
+nnoremap <leader>ad :ArduinoUploadAndSerial<CR>
+nnoremap <leader>ab :ArduinoChooseBoard<CR>
+nnoremap <leader>ap :ArduinoChooseProgrammer<CR>
