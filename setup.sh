@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a file_names=(".bash_aliases" ".gitconfig" ".vimrc")
+declare -a file_names=(".bash_aliases" ".gitconfig" ".vimrc", ".tmux.conf")
 home=${1:-'~'}
 echo "Home Directory: ${home}
 " 
@@ -54,5 +54,4 @@ fi
 #echo 'Setting environment variables'
 export NAME='SatyamTiwary'
 #export EMAIL='satyamtiwary@vvbiotech.com'
-export GITHUB='https//github.com/$NAME/'
-
+export false_color_prompt=yes
