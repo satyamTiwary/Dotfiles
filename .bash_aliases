@@ -1,6 +1,8 @@
 #Helper Functions
 cc() { cd "$@" && la; }
 
+DOCSFOLDER="~/${DOCSFOLDER}"
+
 #Basic Folder Navigation
 alias la="ls -a" #added for compatibility with windows
 alias .="la"
@@ -14,5 +16,8 @@ alias bashrc="vim ~/.bash_aliases"
 alias rebash="source ~/.bashrc"
 
 #Directories
-alias cpp="cc ~/Documents/CppThings"
+alias 2cpp="cc ${DOCSFOLDER}/Cpp-Things"
+alias 2c="cc ${DOCSFOLDER}/C-Things"
+alias 2py="cc ${DOCSFOLDER}/Python-Things"
+
 alias yocto="cc ~/Public/YoctoThings"

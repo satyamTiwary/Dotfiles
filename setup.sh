@@ -1,5 +1,9 @@
 #!/bin/bash
 
+chmod +x ./local.sh
+./local.sh
+echo ${DOCSFOLDER}
+
 declare -a file_names=(".bash_aliases" ".gitconfig" ".vimrc", ".tmux.conf")
 home=${1:-'~'}
 echo "Home Directory: ${home}
