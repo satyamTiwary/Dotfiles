@@ -8,6 +8,8 @@ alias la="ls -a" #added for compatibility with windows
 alias .="la"
 alias ..="cc .."
 alias ...="cc ../.."
+alias ....="cc ../../.."
+alias .....="cc ../../../.."
 alias ~="cc ~"
 alias o="xdg-open ." #TODO: make it applicable to windows too
 
