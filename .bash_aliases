@@ -1,6 +1,6 @@
 #Helper Functions
 cc() { cd "$@" && la; }
-
+alias cd="cc"
 DOCSFOLDER="~/${DOCSFOLDER}"
 
 #Basic Folder Navigation
@@ -12,7 +12,7 @@ alias ....="cc ../../.."
 alias .....="cc ../../../.."
 alias ~="cc ~"
 alias o="xdg-open ." #TODO: make it applicable to windows too
-
+alias df="df -h"
 #Edit Aliases
 alias bashrc="vim ~/.bash_aliases"
 alias rebash="source ~/.bashrc"
