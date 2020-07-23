@@ -30,7 +30,6 @@ alias gl="git last"
 alias 2cpp="cc ${DOCSFOLDER}/Cpp-Things"
 alias 2c="cc ${DOCSFOLDER}/C-Things"
 alias 2py="cc ${DOCSFOLDER}/Python-Things"
-
 alias yocto="cc ~/Public/YoctoThings"
 
 #Servers
