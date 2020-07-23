@@ -20,7 +20,6 @@ highlight colorColumn ctermbg=0 guibg=lightgrey
 " VimPlug Installations
 call plug#begin('~/.vim/plugged')
 
-Plug 'morhetz/gruvbox'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
@@ -34,24 +33,20 @@ Plug 'stevearc/vim-arduino'
 
 call plug#end()
 
-" Set color scheme
-colorscheme gruvbox
-set background=dark
-
 " ripgrep
 if executable('rg')
     let g:rg_derive_root='true'
 endif
 
 " Leader
-let mapleader = " "
+let mapleader=" "
 
 " netrw configs
 let g:netrw_browse_split=4
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:ctrlp_use_caching = 0
-let g:netrw_winsize = 25
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:ctrlp_use_caching=0
+let g:netrw_winsize=25
 
 " YCM
 " The best part.
