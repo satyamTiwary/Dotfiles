@@ -4,7 +4,7 @@ chmod +x ./local.sh
 ./local.sh
 echo ${DOCSFOLDER}
 
-declare -a file_names=(".bash_aliases" ".gitconfig" ".vimrc", ".tmux.conf")
+declare -a file_names=(".bash_aliases" ".gitconfig" ".vimrc", ".tmux.conf", ".tmux.conf.local")
 home=${1:-'~'}
 echo "Home Directory: ${home}
 " 

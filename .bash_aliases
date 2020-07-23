@@ -5,7 +5,7 @@ DOCSFOLDER="~/${DOCSFOLDER}"
 
 #Basic Folder Navigation
 alias la="ls -a" #added for compatibility with windows
-alias .="la"
+alias .="ls -a"
 alias ..="cc .."
 alias ...="cc ../.."
 alias ....="cc ../../.."
