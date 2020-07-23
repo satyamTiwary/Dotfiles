@@ -24,7 +24,6 @@ alias gps="git push"
 alias gpu="git pull"
 alias gdf="git diff"
 alias gcm="git commit -m"
-alias gl="git last"
 
 #Directories
 alias 2cpp="cc ${DOCSFOLDER}/Cpp-Things"
