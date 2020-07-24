@@ -41,15 +41,20 @@ alias t="tmux"
   alias treload="tmux source ~/.tmux.conf"
 
 #Git Aliases
-alias gst="git status -sb"
+alias gst="git status --short"
 alias gad="git add"
+alias gada="git add . && gst"
+alias gadaa="git add --all && gst"
+alias gadu="git add --update && gst"
 alias gps="git push"
 alias gpu="git pull"
 alias gdf="git diff"
-alias gcm="git commit -m"
+alias gdfa="git diff HEAD"
+alias gcm="git commit --message"
 alias gci="git commit --interactive"
 alias grbi="git rebase --interactive"
-alias glog="git log --tree --oneline"
+alias glog="git log --graph --oneline --decorate --all"
+alias gin="git init"
 
 #Directories
 alias 2cpp="cc ${DOCSFOLDER}/Cpp-Things"
