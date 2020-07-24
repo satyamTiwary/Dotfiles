@@ -17,7 +17,7 @@ alias df="df -h"
 
 #Edit Aliases
 alias bashrc="vim ~/.bash_aliases"
-alias rebash="source ~/.bashrc"
+alias rebash="source ~/.bashrc && treload"
 
 #Tmux Alias
 alias vi="vim"
@@ -31,6 +31,7 @@ alias t="tmux"
   alias tssw="tmux switch -t"
   #tmux windows
   alias twnw="tmux new-window"    #prefix + c
+  alias twls="tmux list-windows"
   alias twsw="tmux select-window" #prefix + 0-9
   alias twrw="tmux rename-window" #prefix + ,
   #tmux general
@@ -38,7 +39,12 @@ alias t="tmux"
   alias tlk="tmux list-keys"
   alias tlc="tmux list-commands"
   alias tinfo="tmux info"
-  alias treload="tmux source ~/.tmux.conf"
+  alias treload="tmux source-file ~/.tmux.conf"
+  #tmuxinator
+  alias tx="tmuxinator"
+  alias txnew="tx new"
+  alias txstart="tx start"
+  alias txedit="tx edit"
 
 #Git Aliases
 alias gst="git status --short"
