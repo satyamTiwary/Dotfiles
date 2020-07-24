@@ -140,3 +140,9 @@ unset __conda_setup
 
 export PATH="/home/satyam/Installs/BSC/inst/bin/:$PATH"
 
+if [ -f ~/.bash_env ]; then
+  echo "Custom Envivronment Variables: Found"
+  source ~/.bash_env
+fi
+
+

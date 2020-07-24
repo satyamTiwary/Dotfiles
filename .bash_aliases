@@ -1,6 +1,7 @@
 #Helper Functions
 cc() { cd "$@" && la; }
 alias cd="cc"
+
 DOCSFOLDER="~/${DOCSFOLDER}"
 
 #Basic Folder Navigation
@@ -13,9 +14,31 @@ alias .....="cc ../../../.."
 alias ~="cc ~"
 alias o="xdg-open ." #TODO: make it applicable to windows too
 alias df="df -h"
+
 #Edit Aliases
 alias bashrc="vim ~/.bash_aliases"
 alias rebash="source ~/.bashrc"
+
+#Tmux Alias
+alias vi="vim"
+alias t="tmux"
+  #tmux sessions
+  alias tsls="tmux list-sessions"
+  alias tls="tsls"
+  alias tsnew="tmux new -s"
+  alias tsatt="tmux attach -t"
+  alias tsdet="tmux detach"
+  alias tssw="tmux switch -t"
+  #tmux windows
+  alias twnw="tmux new-window"    #prefix + c
+  alias twsw="tmux select-window" #prefix + 0-9
+  alias twrw="tmux rename-window" #prefix + ,
+  #tmux general
+  alias tres="tmux-resurrect"
+  alias tlk="tmux list-keys"
+  alias tlc="tmux list-commands"
+  alias tinfo="tmux info"
+  alias treload="tmux source ~/.tmux.conf"
 
 #Git Aliases
 alias gst="git status"

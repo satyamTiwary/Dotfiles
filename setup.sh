@@ -4,7 +4,7 @@ chmod +x ./local.sh
 ./local.sh
 echo ${DOCSFOLDER}
 
-declare -a file_names=(".bashrc" ".bash_aliases" ".gitconfig" ".vimrc" ".tmux.conf" ".tmux.conf.local")
+declare -a file_names=(".bashrc" ".bash_aliases" ".bash_env" ".gitconfig" ".vimrc" ".tmux.conf" ".tmux.conf.local")
 home=${1:-'~'}
 echo "Home Directory: ${home}
 " 
@@ -53,11 +53,4 @@ then
 else
   echo "${cross} No new file(s) modified/added"
 fi
-
-# Setup Environment Variables
-#echo 'Setting environment variables'
-export NAME='SatyamTiwary'
-#export EMAIL='satyamtiwary@vvbiotech.com'
-export false_color_prompt=yes
-
 

@@ -1,0 +1,5 @@
+# Setup Environment Variables
+echo 'Custom Environment Variables: Loaded'
+export NAME="SatyamTiwary"
+export EMAIL="satyamtiwary@vvbiotech.com"
+
