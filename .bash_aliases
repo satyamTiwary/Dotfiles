@@ -45,6 +45,10 @@ alias t="tmux"
   alias txnew="tx new"
   alias txstart="tx start"
   alias txedit="tx edit"
+  alias txstop="tx stop"
+  alias txls="tx list"
+  alias txdel="tx delete"
+  alias txcp="tx copy"
 
 #Git Aliases
 alias gst="git status --short"
