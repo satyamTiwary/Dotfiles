@@ -30,6 +30,7 @@ Plug 'mbbill/undotree'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'cjuniet/clang-format.vim'
 Plug 'stevearc/vim-arduino'
+Plug 'vim-scripts/Rainbow-Parenthesis'
 
 call plug#end()
 
