@@ -54,7 +54,10 @@ alias gcm="git commit --message"
 alias gci="git commit --interactive"
 alias grbi="git rebase --interactive"
 alias glog="git log --graph --oneline --decorate --all"
+alias glod="git log --pretty=format:'%h %ad %s' --date=short --all"
 alias gin="git init"
+
+function glf() { glod --grep="$1"; }
 
 #Directories
 alias 2cpp="cc ${DOCSFOLDER}/Cpp-Things"
