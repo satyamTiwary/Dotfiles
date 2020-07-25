@@ -1,5 +1,5 @@
-name: default
-root: ~/
+name: python-base
+root: $DOCSFOLDER/Python-Things
 
 # Optional tmux socket
 # socket_name: foo

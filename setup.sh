@@ -1,8 +1,7 @@
 #!/bin/bash
 
 declare -a file_names=(".bashrc" ".bash_aliases" ".bash_env" ".gitconfig" ".vimrc" ".tmux.conf" ".tmux.conf.local")
-home=${1:-'~'}
-echo "Home Directory: ${home}
+echo "Home Directory: $HOME
 " 
 
 chmod +x ./tmuxinator.sh
@@ -17,24 +16,24 @@ copy_count=0
 for i in "${file_names[@]}"
 do
   # check if file exists, if not - create it
-  if [ -f "${home}/${i}" ]
+  if [ -f "$HOME/${i}" ]
   then
     echo "${i}:		File Exists"
   else
     echo "${i}:		${cross} File Does Not Exists."
-    echo "File created by satyamtiwary/dotfiles/setup.sh" > ${home}/${i}
+    echo "File created by satyamtiwary/dotfiles/setup.sh" > $HOME/${i}
     echo "${i}:		${tick}  File created."
   fi
   
-  diff ./"${i}" ${home}/"${i}"
-  difference=$(diff ./${i} ${home}/${i})
+  diff ./"${i}" $HOME/"${i}"
+  difference=$(diff ./${i} $HOME/${i})
   size=${#difference}
   if [ "${size}" -gt 0 ] 
   then
-    if cp ./"${i}" ${home}/"${i}"
+    if cp ./"${i}" $HOME/"${i}"
     then
-      echo "${i}:	${tick} Copied ./${i} to ${home}/${i}"
-      source ${home}/${i}
+      echo "${i}:	${tick} Copied ./${i} to $HOME/${i}"
+      source $HOME/${i}
       echo "${i}: 	${tick} file activated."
       copy_count=$((copy_count+1))
     else

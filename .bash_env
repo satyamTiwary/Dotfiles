@@ -1,7 +1,13 @@
 # Setup Environment Variables
 echo 'Custom Environment Variables: Loaded'
+
 export NAME="SatyamTiwary"
 export EMAIL="satyamtiwary@vvbiotech.com"
 
 export EDITOR="vim"
 
+if [ -f $HOME/.bash_env_local ]; then
+  source ./.bash_env_local
+else
+  export DOCSFOLDER="$HOME/Documents"
+fi

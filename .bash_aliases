@@ -2,8 +2,6 @@
 cc() { cd "$@" && la; }
 alias cd="cc"
 
-DOCSFOLDER="~/${DOCSFOLDER}"
-
 #Basic Folder Navigation
 alias la="ls -a" #added for compatibility with windows
 alias .="ls -a"
@@ -11,13 +9,14 @@ alias ..="cc .."
 alias ...="cc ../.."
 alias ....="cc ../../.."
 alias .....="cc ../../../.."
-alias ~="cc ~"
+alias ~="cc $HOME"
 alias o="xdg-open ." #TODO: make it applicable to windows too
 alias df="df -h"
 
 #Edit Aliases
-alias bashrc="vim ~/.bash_aliases"
-alias rebash="source ~/.bashrc && treload"
+alias bashrc="vim $HOME/.bash_aliases"
+alias rebash="source $HOME/.bashrc && treload"
+alias localenv="vim $HOME/.bash_env_local"
 
 #Tmux Alias
 alias vi="vim"
@@ -39,7 +38,7 @@ alias t="tmux"
   alias tlk="tmux list-keys"
   alias tlc="tmux list-commands"
   alias tinfo="tmux info"
-  alias treload="tmux source-file ~/.tmux.conf"
+  alias treload="tmux source-file $HOME/.tmux.conf"
   #tmuxinator
   alias tx="tmuxinator"
   alias txnew="tx new"
@@ -70,10 +69,10 @@ alias gin="git init"
 function glf() { glod --grep="$1"; }
 
 #Directories
-alias 2cpp="cc ${DOCSFOLDER}/Cpp-Things"
-alias 2c="cc ${DOCSFOLDER}/C-Things"
-alias 2py="cc ${DOCSFOLDER}/Python-Things"
-alias yocto="cc ~/Public/YoctoThings"
+alias 2cpp="cc $HOME/Cpp-Things"
+alias 2c="cc $HOME/C-Things"
+alias 2py="cc $HOME/Python-Things"
+alias yocto="cc $HOME/Public/YoctoThings"
 
 #Servers
 LINODE_SERVER_IP="172.105.40.131"
