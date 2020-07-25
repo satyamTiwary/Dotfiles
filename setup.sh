@@ -8,6 +8,8 @@ chmod +x ./tmuxinator.sh
 ./tmuxinator.sh
 echo ${DOCSFOLDER}
 
+chmod +x ./tmuxinator/make_config.sh
+
 tick=$'\u2714'
 cross=$'\u2718'
 

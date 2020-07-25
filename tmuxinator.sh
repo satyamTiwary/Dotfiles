@@ -16,7 +16,7 @@ if command -v tmuxinator &> /dev/null; then
   fi
 
   # Action: Create the symbolic links
-  cp ./tmuxinator/* $target
+  cp ./tmuxinator/*.yml $target
   # ---
   echo "tmuxinator:   ${tick} Yaml files updated"
 else
