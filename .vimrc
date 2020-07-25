@@ -61,11 +61,19 @@ nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>cf :ClangFormat<CR>
 
-nnoremap <silent> <Leader>+ :vertical resize +5<CR>
-nnoremap <silent> <Leader>- :vertical resize -5<CR>
+nnoremap <Leader>sv :wincmd v<CR>
+
+nmap <silent> <left> :3wincmd <<CR>
+nmap <silent> <right> :3wincmd ><CR>
+nmap <silent> <up> :3wincmd -<CR>
+nmap <silent> <down> :3wincmd +<CR>
 
 nnoremap <silent> <Leader>gd :YcmCompleter Goto<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+
+nmap <silent> <right> :3wincmd ><CR>
+nmap <silent> <right> :3wincmd ><CR>
+
 
 nnoremap <leader>av :ArduinoVerify<CR>
 nnoremap <leader>au :ArduinoUpload<CR>
