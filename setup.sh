@@ -1,13 +1,13 @@
 #!/bin/bash
 
-chmod +x ./local.sh
-./local.sh
-echo ${DOCSFOLDER}
-
 declare -a file_names=(".bashrc" ".bash_aliases" ".bash_env" ".gitconfig" ".vimrc" ".tmux.conf" ".tmux.conf.local")
 home=${1:-'~'}
 echo "Home Directory: ${home}
 " 
+
+chmod +x ./tmuxinator.sh
+./tmuxinator.sh
+echo ${DOCSFOLDER}
 
 tick=$'\u2714'
 cross=$'\u2718'
