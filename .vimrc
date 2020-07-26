@@ -32,6 +32,8 @@ Plug 'cjuniet/clang-format.vim'
 Plug 'stevearc/vim-arduino'
 Plug 'vim-scripts/Rainbow-Parenthesis'
 Plug 'bling/vim-airline'
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -58,6 +60,8 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
+nmap <F7> :UndotreeToggle<CR>
+
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>cf :ClangFormat<CR>
@@ -75,6 +79,28 @@ nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <right> :3wincmd ><CR>
 
+nmap <F8> :TagbarToggle<CR>
+
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+
+" Add your own mapping. For example:
+noremap <silent> <F9> :call ToggleNetrw()<CR>
 
 nnoremap <leader>av :ArduinoVerify<CR>
 nnoremap <leader>au :ArduinoUpload<CR>
@@ -87,4 +113,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " ctrlp: file search with <C-p>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_working_path_mode = 'ra'
+
 

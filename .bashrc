@@ -45,7 +45,6 @@ esac
 THEIP=$(ifconfig | grep 'inet '| grep -v '127.0.0.1' | tail -1 | cut -d: -f2 | awk '{ print $2}')
 # ==================================================================================================
 
-
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
@@ -68,7 +67,6 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@$THEIP:\w\$ '
 fi
 unset color_prompt force_color_prompt
-
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -158,3 +156,4 @@ echo "tmux: tska    Tmux Sessions Kill All"
 echo "tmux: tskill    Tmux Kill most recent session"
 echo "---"
 echo
+
