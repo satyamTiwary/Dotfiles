@@ -10,6 +10,7 @@ set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
+set showmatch
 set cindent
 "set pastetoggle=<f5>
 set nu
@@ -47,18 +48,18 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 Plug 'lyuts/vim-rtags'
 
 " added for C/C++
 Plug 'cjuniet/clang-format.vim'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'stevearc/vim-arduino'
+"Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'stevearc/vim-arduino'
 
 " added for scip/lisp/racket
-Plug 'vim-scripts/Rainbow-Parenthesis'
-Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/syntastic'
+Plug 'kien/rainbow_parentheses.vim'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'scrooloose/syntastic'
 Plug 'jpalardy/vim-slime'
 Plug 'wlangstroth/vim-racket'
 
@@ -117,6 +118,9 @@ nmap <silent> <right> :3wincmd ><CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F10> :Autoformat<CR>
 
+nmap <Leader>. :bnext<CR>
+nmap <Leader>, :bprev<CR>
+
 let g:NetrwIsOpen=0
 
 function! ToggleNetrw()
@@ -137,11 +141,11 @@ endfunction
 
 noremap <silent> <F9> :call ToggleNetrw()<CR>
 
-nnoremap <leader>av :ArduinoVerify<CR>
-nnoremap <leader>au :ArduinoUpload<CR>
-nnoremap <leader>ad :ArduinoUploadAndSerial<CR>
-nnoremap <leader>ab :ArduinoChooseBoard<CR>
-nnoremap <leader>ap :ArduinoChooseProgrammer<CR>
+"nnoremap <leader>av :ArdullllinoVerify<CR>
+"nnoremap <leader>au :ArduinoUpload<CR>
+"nnoremap <leader>ad :ArduinoUploadAndSerial<CR>
+"nnoremap <leader>ab :ArduinoChooseBoard<CR>
+"nnoremap <leader>ap :ArduinoChooseProgrammer<CR>
 
 " vim-airline: status bar
 let g:airline#extensions#tabline#enabled = 1
@@ -152,4 +156,58 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " Git Gutter
 highlight! link SignColumn LineNr
+
+" Vim Racket/Scheme
+autocmd bufread,bufnewfile *.lisp,*.scm setlocal equalprg=scmindent.rkt
+if has("autocmd")
+  au BufReadPost *.rkt,*.rktl set filetype=scheme
+  au filetype racket set lisp
+  "au filetype racket set autoindent
+endif
+let g:syntastic_enable_racket_racket_checker=1
+
+" Syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" slimv for scheme interpreting
+" let g:slimv_swank_cmd = '! xterm -e sbcl --load /usr/share/common-lisp/source/slime/start-swank.lisp &'
+" let g:slimv_swank_cmd = '! tmux new-window -d -n REPL-SBCL "sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp"'
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+" or maybe...
+
+" Rainbow Parantheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
 

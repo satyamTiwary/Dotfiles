@@ -75,11 +75,13 @@ function glf() { glod --grep="$1"; }
 source "$HOME/.bash_env_local"
 
 #Directories
+alias 2docs="cc $DOCSFOLDER"
 alias 2cpp="cc $DOCSFOLDER/Cpp-Things"
 alias 2c="cc $DOCSFOLDER/C-Things"
 alias 2py="cc $DOCSFOLDER/Python-Things"
 alias 2yocto="cc $HOME/Public/YoctoThings"
 alias 2dot="cc $HOME/dotfiles"
+alias 2scip="cc $DOCSFOLDER/SCIP-Things"
 
 #Servers
 LINODE_SERVER_IP="172.105.40.131"

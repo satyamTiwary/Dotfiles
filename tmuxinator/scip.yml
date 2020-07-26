@@ -1,5 +1,5 @@
-name: default
-root: ~/
+name: scip
+root: ~/Documents/SCIP-Things
 
 # Optional tmux socket
 # socket_name: foo
@@ -42,11 +42,13 @@ pre_window: tmux source ~/.tmux.conf
 
 windows:
   - editor:
-      layout: 712a,166x45,0,0{95x45,0,0,0,70x45,96,0[70x22,96,0,1,70x22,96,23,2]}
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
+      layout: main-horizontal
+      panes:
+        - vi -c ':vsp|Explore'
+        - racket
+  - browser:
+      layout: main-horizontal
       panes:
         - 
-        - 
-        - 
+        -
+

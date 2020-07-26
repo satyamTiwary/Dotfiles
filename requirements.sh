@@ -27,5 +27,7 @@ else
     # cmake
     pip3 install cmake_format
 
+  # Scmindenter: recomended for scheme
+  sudo npm install -g scmindent
 fi
 
