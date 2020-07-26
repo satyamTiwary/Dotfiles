@@ -28,11 +28,14 @@ alias t="tmux"
   alias tsatt="tmux attach -t"
   alias tsdet="tmux detach"
   alias tssw="tmux switch -t"
+  alias tska="tmux kill-server"
+  alias tskill="tmux kill-session"
   #tmux windows
   alias twnw="tmux new-window"    #prefix + c
   alias twls="tmux list-windows"
   alias twsw="tmux select-window" #prefix + 0-9
   alias twrw="tmux rename-window" #prefix + ,
+  alias twkill="tmux kill-window"
   #tmux general
   alias tres="tmux-resurrect"
   alias tlk="tmux list-keys"
