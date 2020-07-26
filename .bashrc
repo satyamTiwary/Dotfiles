@@ -140,8 +140,21 @@ unset __conda_setup
 
 export PATH="/home/satyam/Installs/BSC/inst/bin/:$PATH"
 
+
+echo
+echo "bashrc: satyamtiwary/dotfiles (main)"
+echo "---"
+# Load bash_env file if it exists
 if [ -f ~/.bash_env ]; then
-  echo "Custom Environment Variables: Found"
+  #echo "bash_env: Custom Environment Variables    Found"
   source ~/.bash_env
 fi
 
+# tmux: list all sessions
+echo
+echo "tmux: list of sessions in progress:"
+tmux list-sessions
+echo "tmux: tska    Tmux Sessions Kill All"
+echo "tmux: tskill    Tmux Kill most recent session"
+echo "---"
+echo

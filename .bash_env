@@ -1,5 +1,5 @@
 # Setup Environment Variables
-echo 'Custom Environment Variables: Loaded'
+echo 'bash_env: environment variables found'
 
 export NAME="SatyamTiwary"
 export EMAIL="satyamtiwary@vvbiotech.com"

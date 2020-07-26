@@ -31,6 +31,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'cjuniet/clang-format.vim'
 Plug 'stevearc/vim-arduino'
 Plug 'vim-scripts/Rainbow-Parenthesis'
+Plug 'bling/vim-airline'
 
 call plug#end()
 
@@ -49,7 +50,7 @@ let g:netrw_liststyle=3
 let g:ctrlp_use_caching=0
 let g:netrw_winsize=25
 
-" YCM
+" Leader Shortcuts 
 " The best part.
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -80,3 +81,10 @@ nnoremap <leader>au :ArduinoUpload<CR>
 nnoremap <leader>ad :ArduinoUploadAndSerial<CR>
 nnoremap <leader>ab :ArduinoChooseBoard<CR>
 nnoremap <leader>ap :ArduinoChooseProgrammer<CR>
+
+" vim-airline: status bar
+let g:airline#extensions#tabline#enabled = 1
+
+" ctrlp: file search with <C-p>
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+

@@ -20,7 +20,7 @@ alias localenv="vim $HOME/.bash_env_local"
 
 #Tmux Alias
 alias vi="vim"
-alias t="tmux"
+alias tmux='tmux -u'
   #tmux sessions
   alias tsls="tmux list-sessions"
   alias tls="tsls"
@@ -28,8 +28,8 @@ alias t="tmux"
   alias tsatt="tmux attach -t"
   alias tsdet="tmux detach"
   alias tssw="tmux switch -t"
-  alias tska="tmux kill-server"
-  alias tskill="tmux kill-session"
+  alias tska="tmux kill-server && tsls"
+  alias tskill="tmux kill-session && tsls"
   #tmux windows
   alias twnw="tmux new-window"    #prefix + c
   alias twls="tmux list-windows"

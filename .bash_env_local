@@ -5,9 +5,11 @@
 
 # This file is only used if it is available in the Home directory of a system
 # as defined by $HOME environment variable.
+echo "bash_env_local: local environment variable found"
+
 
 # Example:
 export DOCSFOLDER="$HOME"
 # or
 # exprt DOCSFOLDER="$HOME/Documents"
-echo "DOCSFOLDER: $DOCSFOLDER"
+echo "bash_env_local: DOCSFOLDER    $DOCSFOLDER"
