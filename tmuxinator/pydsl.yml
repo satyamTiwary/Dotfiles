@@ -50,7 +50,7 @@ windows:
   - repl:
       layout: main-horizontal
       panes:
-        - python3
+        - ipython
         - 
   - browser:
       layout: main-horizontal
