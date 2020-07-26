@@ -43,7 +43,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'chiel92/vim-autoformat'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
 
 call plug#end()
@@ -69,7 +69,7 @@ let g:ctrlp_use_caching=0
 let g:netrw_winsize=25
 
 " Vim-Airline-Theme: Status bar theme
-let g:airline_theme='simple'
+"let g:airline_theme='simple'
 
 " Leader Shortcuts
 " The best part.
