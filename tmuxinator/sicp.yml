@@ -47,9 +47,14 @@ windows:
         - vi -c ':vsp|Explore'
         - racket
         - ls
+  - repl:
+      layout: main-horizontal
+      panes:
+        - racket
+        - gdf
   - browser:
       layout: main-horizontal
       panes:
-        - glog
-        - 
+        -
+        -
 

@@ -19,11 +19,11 @@ else
     # autopep8
     pip3 install autopep8
     # ESlint
-    npm install -g eslint
+    sudo npm install -g eslint
     # html,css,js: Js-beautify
-    npm install -g js-beautify
+    sudo npm install -g js-beautify
     # markdown
-    npm install -g remark-cli
+    sudo npm install -g remark-cli
     # cmake
     pip3 install cmake_format
 
