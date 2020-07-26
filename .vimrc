@@ -1,4 +1,4 @@
-syntax on
+syntax enable
 
 set noerrorbells
 set tabstop=2 softtabstop=2
@@ -7,7 +7,7 @@ set expandtab
 set smartindent
 set autoindent
 set cindent
-set pastetoggle=<f5>
+"set pastetoggle=<f5>
 set nu
 set nowrap
 set noswapfile
@@ -42,10 +42,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
 Plug 'chiel92/vim-autoformat'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tomasr/molokai'
 
 call plug#end()
+
+" color scheme: molokai
+colorscheme monokai
+let g:molokai_original=1
+let g:rehash256=1
 
 " ripgrep
 if executable('rg')
@@ -61,6 +67,9 @@ let g:netrw_banner=0
 let g:netrw_liststyle=3
 let g:ctrlp_use_caching=0
 let g:netrw_winsize=25
+
+" Vim-Airline-Theme: Status bar theme
+let g:airline_theme='simple'
 
 " Leader Shortcuts
 " The best part.
