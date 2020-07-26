@@ -1,5 +1,9 @@
 syntax enable
 
+filetype on
+filetype indent on
+filetype plugin on
+
 set noerrorbells
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -24,27 +28,39 @@ highlight colorColumn ctermbg=0 guibg=lightgrey
 " VimPlug Installations
 call plug#begin('~/.vim/plugged')
 
-Plug 'jremmen/vim-ripgrep'
-Plug 'tpope/vim-fugitive'
+" essentials
 Plug 'vim-utils/vim-man'
-Plug 'lyuts/vim-rtags'
-Plug 'kien/ctrlp.vim'
 Plug 'valloric/youcompleteme'
+Plug 'jremmen/vim-ripgrep'
+Plug 'kien/ctrlp.vim'
 Plug 'mbbill/undotree'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'cjuniet/clang-format.vim'
-Plug 'stevearc/vim-arduino'
-Plug 'vim-scripts/Rainbow-Parenthesis'
-Plug 'bling/vim-airline'
 Plug 'majutsushi/tagbar'
-Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-surround'
 Plug 'chiel92/vim-autoformat'
-"Plug 'vim-airline/vim-airline-themes'
+
+" visual
 Plug 'tomasr/molokai'
+Plug 'bling/vim-airline'
+
+" unclear utility
+Plug 'terryma/vim-multiple-cursors'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'lyuts/vim-rtags'
+
+" added for C/C++
+Plug 'cjuniet/clang-format.vim'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'stevearc/vim-arduino'
+
+" added for scip/lisp/racket
+Plug 'vim-scripts/Rainbow-Parenthesis'
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/syntastic'
+Plug 'jpalardy/vim-slime'
+Plug 'wlangstroth/vim-racket'
 
 call plug#end()
 
