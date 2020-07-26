@@ -5,14 +5,18 @@ set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
+set autoindent
+set cindent
+set pastetoggle=<f5>
 set nu
 set nowrap
-set smartcase
 set noswapfile
 set nobackup
 set undodir=/.vim/undorir
 set undofile
+set smartcase
 set incsearch
+set hlsearch
 
 set colorcolumn=80
 highlight colorColumn ctermbg=0 guibg=lightgrey
@@ -34,12 +38,18 @@ Plug 'vim-scripts/Rainbow-Parenthesis'
 Plug 'bling/vim-airline'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips'
+Plug 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
+Plug 'chiel92/vim-autoformat'
 
 call plug#end()
 
 " ripgrep
 if executable('rg')
-    let g:rg_derive_root='true'
+  let g:rg_derive_root='true'
 endif
 
 " Leader
@@ -52,7 +62,7 @@ let g:netrw_liststyle=3
 let g:ctrlp_use_caching=0
 let g:netrw_winsize=25
 
-" Leader Shortcuts 
+" Leader Shortcuts
 " The best part.
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -80,26 +90,26 @@ nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <right> :3wincmd ><CR>
 
 nmap <F8> :TagbarToggle<CR>
+nmap <F10> :Autoformat<CR>
 
 let g:NetrwIsOpen=0
 
 function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Lexplore
-    endif
+  if g:NetrwIsOpen
+    let i = bufnr("$")
+    while (i >= 1)
+      if (getbufvar(i, "&filetype") == "netrw")
+        silent exe "bwipeout " . i
+      endif
+      let i-=1
+    endwhile
+    let g:NetrwIsOpen=0
+  else
+    let g:NetrwIsOpen=1
+    silent Lexplore
+  endif
 endfunction
 
-" Add your own mapping. For example:
 noremap <silent> <F9> :call ToggleNetrw()<CR>
 
 nnoremap <leader>av :ArduinoVerify<CR>
@@ -115,4 +125,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 let g:ctrlp_working_path_mode = 'ra'
 
+" Git Gutter
+highlight! link SignColumn LineNr
 
