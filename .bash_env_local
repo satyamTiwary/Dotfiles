@@ -9,7 +9,7 @@ echo "bash_env_local: local environment variable found"
 
 
 # Example:
-export DOCSFOLDER="$HOME"
+export DOCSFOLDER="$HOME/Documents"
 # or
 # exprt DOCSFOLDER="$HOME/Documents"
 echo "bash_env_local: DOCSFOLDER    $DOCSFOLDER"

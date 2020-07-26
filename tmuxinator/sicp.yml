@@ -1,5 +1,5 @@
-name: python-base
-root: ~/Documents/Python-Things
+name: sicp(sicp)
+root: ~/Documents/SICP-Things
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,11 +45,11 @@ windows:
       layout: main-horizontal
       panes:
         - vi -c ':vsp|Explore'
-        - python3
+        - racket
         - ls
   - browser:
       layout: main-horizontal
       panes:
+        - glog
         - 
-        - glog 
 

@@ -294,4 +294,6 @@ set -g mouse on
 
 # move status line to top
 set -g status-position top
-
+# cycle prev/next pane
+bind -n S-right select-pane -t :.+
+bind -n S-left select-pane -t :.-

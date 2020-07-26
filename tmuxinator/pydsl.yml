@@ -1,5 +1,5 @@
-name: scip
-root: ~/Documents/SCIP-Things
+name: dsl_study(pydsl)
+root: ~/Documents/Python-Things/dslStudy
 
 # Optional tmux socket
 # socket_name: foo
@@ -45,10 +45,16 @@ windows:
       layout: main-horizontal
       panes:
         - vi -c ':vsp|Explore'
-        - racket
+        - python3
+        - ls
+  - repl:
+      layout: main-horizontal
+      panes:
+        - python3
+        - 
   - browser:
       layout: main-horizontal
       panes:
         - 
-        -
+        - glog 
 
