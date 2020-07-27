@@ -1,4 +1,4 @@
-name: dsl_study(pydsl)
+name: pydsl
 root: ~/Documents/Python-Things/dslStudy
 
 # Optional tmux socket
@@ -44,7 +44,7 @@ windows:
   - editor:
       layout: main-horizontal
       panes:
-        - vi -c ':vsp|Explore'
+        - vi
         - python3
         - ls
   - repl:

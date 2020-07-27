@@ -1,4 +1,4 @@
-name: python-base
+name: py
 root: ~/Documents/Python-Things
 
 # Optional tmux socket
@@ -44,7 +44,7 @@ windows:
   - editor:
       layout: main-horizontal
       panes:
-        - vi -c ':vsp|Explore'
+        - vi
         - python3
         - ls
   - browser:

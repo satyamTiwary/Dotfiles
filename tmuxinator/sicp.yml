@@ -1,4 +1,4 @@
-name: sicp(sicp)
+name: sicp
 root: ~/Documents/SICP-Things
 
 # Optional tmux socket
@@ -44,7 +44,7 @@ windows:
   - editor:
       layout: main-horizontal
       panes:
-        - vi -c ':vsp|Explore'
+        - vi
         - racket
         - ls
   - repl:
