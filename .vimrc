@@ -83,7 +83,12 @@ let g:netrw_browse_split=4
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 let g:ctrlp_use_caching=0
+"let g:netrw_altv = 1
 let g:netrw_winsize=25
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
 
 " Vim-Airline-Theme: Status bar theme
 "let g:airline_theme='simple'

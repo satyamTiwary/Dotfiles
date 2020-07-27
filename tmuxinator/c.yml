@@ -1,7 +1,7 @@
 # ~/.tmuxinator/c.yml
 
 name: c
-root: ~/C-Things
+root: ~/Documents/C-Things
 
 # Optional tmux socket
 # socket_name: foo
@@ -33,16 +33,12 @@ root: ~/C-Things
 windows:
   - editor:
       layout: main-vertical
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
       panes:
-        - vim .
-        - ls
-        - ls
-  - debug:
-      layout: main-horizontal
-      panes:
-        - vim .
+        - vi
         - gdb
-        - ls
+  - debug:
+      layout: main-vertical
+      panes:
+        - glog
+        - gdb 
+
