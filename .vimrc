@@ -1,10 +1,13 @@
-syntax enable
+syntax on
 
 filetype on
 filetype indent on
 filetype plugin on
 
-set noerrorbells
+set ruler
+set visualbell
+set encoding=utf-8
+
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -14,7 +17,10 @@ set showmatch
 set cindent
 "set pastetoggle=<f5>
 set nu
-set nowrap
+"set nowrap
+set wrap
+set backspace=indent,eol,start
+
 set noswapfile
 set nobackup
 set undodir=/.vim/undorir
@@ -101,7 +107,7 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
 nnoremap <leader>u :UndotreeShow<CR>
-nmap <F7> :UndotreeToggle<CR>
+nmap <F10> :UndotreeToggle<CR>
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>
 nnoremap <Leader>ps :Rg<SPACE>
@@ -120,8 +126,8 @@ nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <right> :3wincmd ><CR>
 
-nmap <F8> :TagbarToggle<CR>
-nmap <F10> :Autoformat<CR>
+nmap <F11> :TagbarToggle<CR>
+nmap <F9> :Autoformat<CR>
 
 nmap <Leader>. :bnext<CR>
 nmap <Leader>, :bprev<CR>
@@ -144,7 +150,7 @@ function! ToggleNetrw()
   endif
 endfunction
 
-noremap <silent> <F9> :call ToggleNetrw()<CR>
+noremap <silent> <F12> :call ToggleNetrw()<CR>
 
 "nnoremap <leader>av :ArdullllinoVerify<CR>
 "nnoremap <leader>au :ArduinoUpload<CR>
@@ -163,13 +169,11 @@ let g:ctrlp_working_path_mode = 'ra'
 highlight! link SignColumn LineNr
 
 " Vim Racket/Scheme
-autocmd bufread,bufnewfile *.lisp,*.scm setlocal equalprg=scmindent.rkt
+autocmd bufread,bufnewfile *.lisp,*.scm,*.rkt,*.rktl setlocal equalprg=scmindent.rkt
 if has("autocmd")
   au BufReadPost *.rkt,*.rktl set filetype=scheme
-  au filetype racket set lisp
-  "au filetype racket set autoindent
 endif
-let g:syntastic_enable_racket_racket_checker=1
+" let g:syntastic_enable_racket_racket_checker=1
 
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
