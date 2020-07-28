@@ -25,6 +25,7 @@ else
   sudo apt install net-tools
   sudo apt install texlive-binaries
   sudo apt  install tree
+  sudo apt install ipython3
 
   # Autoformat
   python3 -m pip install pynvim
