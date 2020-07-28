@@ -69,6 +69,12 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'jpalardy/vim-slime'
 Plug 'wlangstroth/vim-racket'
 
+" added for yocto/bitbake
+Plug 'kergoth/vim-bitbake'
+
+" Tex
+Plug 'xuhdev/vim-latex-live-preview'
+
 call plug#end()
 
 " color scheme: molokai
@@ -176,9 +182,9 @@ endif
 " let g:syntastic_enable_racket_racket_checker=1
 
 " Syntastic recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -219,4 +225,9 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
+
+" TEX-live
+autocmd Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'open -a Preview'
+nnoremap <Leader>= :LLPStartPreview<CR>
 
