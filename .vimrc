@@ -15,9 +15,7 @@ set smartindent
 set autoindent
 set showmatch
 set cindent
-"set pastetoggle=<f5>
 set nu
-"set nowrap
 set wrap
 set backspace=indent,eol,start
 
@@ -54,7 +52,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'lyuts/vim-rtags'
 
 " added for C/C++
@@ -64,8 +62,8 @@ Plug 'cjuniet/clang-format.vim'
 
 " added for scip/lisp/racket
 Plug 'kien/rainbow_parentheses.vim'
-"Plug 'sheerun/vim-polyglot'
-"Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'scrooloose/syntastic'
 Plug 'jpalardy/vim-slime'
 Plug 'wlangstroth/vim-racket'
 
@@ -74,6 +72,7 @@ Plug 'kergoth/vim-bitbake'
 
 " Tex
 Plug 'xuhdev/vim-latex-live-preview'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
