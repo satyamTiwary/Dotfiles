@@ -1,5 +1,12 @@
 #Helper Functions
 cc() { cd "$@" && la; }
+cm() {
+  if [ ! -e "$@" ]
+  then
+    mkdir "$@"
+  fi
+  cc "$@";
+}
 alias cd="cc"
 
 #Basic Folder Navigation
@@ -21,36 +28,36 @@ alias localenv="vim $HOME/.bash_env_local"
 #Tmux Alias
 alias vi="vim"
 alias tmux='tmux -u'
-  #tmux sessions
-  alias tsls="tmux list-sessions"
-  alias tls="tsls"
-  alias tsnew="tmux new -s"
-  alias tsatt="tmux attach -t"
-  alias tsdet="tmux detach"
-  alias tssw="tmux switch -t"
-  alias tska="tmux kill-server && tsls"
-  alias tskill="tmux kill-session && tsls"
-  #tmux windows
-  alias twnw="tmux new-window"    #prefix + c
-  alias twls="tmux list-windows"
-  alias twsw="tmux select-window" #prefix + 0-9
-  alias twrw="tmux rename-window" #prefix + ,
-  alias twkill="tmux kill-window"
-  #tmux general
-  alias tres="tmux-resurrect"
-  alias tlk="tmux list-keys"
-  alias tlc="tmux list-commands"
-  alias tinfo="tmux info"
-  alias treload="tmux source-file $HOME/.tmux.conf"
-  #tmuxinator
-  alias tx="tmuxinator"
-  alias txnew="tx new"
-  alias txstart="tx start"
-  alias txedit="tx edit"
-  alias txstop="tx stop"
-  alias txls="tx list"
-  alias txdel="tx delete"
-  alias txcp="tx copy"
+#tmux sessions
+alias tsls="tmux list-sessions"
+alias tls="tsls"
+alias tsnew="tmux new -s"
+alias tsatt="tmux attach -t"
+alias tsdet="tmux detach"
+alias tssw="tmux switch -t"
+alias tska="tmux kill-server && tsls"
+alias tskill="tmux kill-session && tsls"
+#tmux windows
+alias twnw="tmux new-window"    #prefix + c
+alias twls="tmux list-windows"
+alias twsw="tmux select-window" #prefix + 0-9
+alias twrw="tmux rename-window" #prefix + ,
+alias twkill="tmux kill-window"
+#tmux general
+alias tres="tmux-resurrect"
+alias tlk="tmux list-keys"
+alias tlc="tmux list-commands"
+alias tinfo="tmux info"
+alias treload="tmux source-file $HOME/.tmux.conf"
+#tmuxinator
+alias tx="tmuxinator"
+alias txnew="tx new"
+alias txstart="tx start"
+alias txedit="tx edit"
+alias txstop="tx stop"
+alias txls="tx list"
+alias txdel="tx delete"
+alias txcp="tx copy"
 
 #Git Aliases
 alias gst="git status --short"
@@ -77,15 +84,15 @@ source "$HOME/.bash_env_local"
 #Directories
 alias 2docs="cc $DOCSFOLDER"
 
-alias 2c="cc $DOCSFOLDER/C-Things"
-alias 2cpp="cc $DOCSFOLDER/Cpp-Things"
-alias 2py="cc $DOCSFOLDER/Python-Things"
-alias 2sicp="cc $DOCSFOLDER/SICP-Things"
-alias 2yocto="cc $HOME/Public/YoctoThings"
+alias 2c="cm $DOCSFOLDER/C-Things"
+alias 2cpp="cm $DOCSFOLDER/Cpp-Things"
+alias 2py="cm $DOCSFOLDER/Python-Things"
+alias 2sicp="cm $DOCSFOLDER/SICP-Things"
+alias 2yocto="cm $HOME/Public/Yocto-Things"
 
 alias 2dots="cc $HOME/dotfiles"
-alias 2notes="cc $DOCSFOLDER/Notes"
-alias 2story="cc $DOCSFOLDER/Story-Things"
+alias 2notes="cm $DOCSFOLDER/Notes"
+alias 2story="cm $DOCSFOLDER/Story-Things"
 
 #Servers
 LINODE_SERVER_IP="172.105.40.131"
