@@ -7,6 +7,7 @@ cm() {
   fi
   cc "$@";
 }
+
 alias cd="cc"
 
 #Basic Folder Navigation
