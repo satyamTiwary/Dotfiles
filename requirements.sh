@@ -14,33 +14,20 @@ then
   echo "requirements: Molokai colors file created/updated."
 else
 
-  sudo apt install tmux
-  sudo apt install npm
+  sudo apt install vim tmux npm python3 exuberant-ctags tmuxinator net-tools texlive-binaries tree ipython3 git-repo
+
+  pip3 install pynvim autopep8 cmake_format
+  sudo npm install -g eslint js-beautify remark-cli scmindent
+
+  # Repo tools
+  mkdir $HOME/bin
+  PATH=$HOME/bin:$PATH
+  curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  chmod a+x ~/bin/repo
 
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-  sudo apt  install exuberant-ctags
-  sudo apt install tmuxinator
-  sudo apt install net-tools
-  sudo apt install texlive-binaries
-  sudo apt  install tree
-  sudo apt install ipython3
-
-  # Autoformat
-  python3 -m pip install pynvim
-  # autopep8
-  pip3 install autopep8
-  # ESlint
-  sudo npm install -g eslint
-  # html,css,js: Js-beautify
-  sudo npm install -g js-beautify
-  # markdown
-  sudo npm install -g remark-cli
-  # cmake
-  pip3 install cmake_format
-
-  # Scmindenter: recomended for scheme
-  sudo npm install -g scmindent
+  
 fi
 
