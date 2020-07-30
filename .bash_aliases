@@ -12,7 +12,7 @@ alias cd="cc"
 
 #Basic Folder Navigation
 alias la="ls -a" #added for compatibility with windows
-alias .="ls -a"
+#alias .="ls -a"
 alias ..="cc .."
 alias ...="cc ../.."
 alias ....="cc ../../.."
