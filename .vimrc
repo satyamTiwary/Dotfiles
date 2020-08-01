@@ -34,7 +34,7 @@ highlight colorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.vim/plugged')
 
 " essentials
-Plug 'vim-utils/vim-man'
+Plug 'vim-utils/vim-man', { 'on': 'Man' } 
 Plug 'valloric/youcompleteme'
 Plug 'jremmen/vim-ripgrep'
 Plug 'kien/ctrlp.vim'
@@ -56,7 +56,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'lyuts/vim-rtags'
 
 " added for C/C++
-Plug 'cjuniet/clang-format.vim'
+Plug 'cjuniet/clang-format.vim', {'for': ['c', 'cpp']}
 "Plug 'octol/vim-cpp-enhanced-highlight'
 "Plug 'stevearc/vim-arduino'
 
@@ -65,14 +65,14 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'scrooloose/syntastic'
 Plug 'jpalardy/vim-slime'
-Plug 'wlangstroth/vim-racket'
+Plug 'wlangstroth/vim-racket', {'for': ['scheme', 'racket', 'lisp']}
 
 " added for yocto/bitbake
-Plug 'kergoth/vim-bitbake'
+Plug 'kergoth/vim-bitbake', {'for': 'bitbake'}
 
 " Tex
-Plug 'xuhdev/vim-latex-live-preview'
-Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'} | Plug 'shime/vim-livedown', {'for': 'markdown'}
+Plug 'lervag/vimtex', {'for': 'tex'}
 
 call plug#end()
 
@@ -94,15 +94,7 @@ let g:netrw_browse_split=4
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 let g:ctrlp_use_caching=0
-"let g:netrw_altv = 1
 let g:netrw_winsize=25
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
-
-" Vim-Airline-Theme: Status bar theme
-"let g:airline_theme='simple'
 
 " Leader Shortcuts
 " The best part.
@@ -191,12 +183,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " slimv for scheme interpreting
-" let g:slimv_swank_cmd = '! xterm -e sbcl --load /usr/share/common-lisp/source/slime/start-swank.lisp &'
-" let g:slimv_swank_cmd = '! tmux new-window -d -n REPL-SBCL "sbcl --load ~/.vim/bundle/slimv/slime/start-swank.lisp"'
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-" or maybe...
 
 " Rainbow Parantheses
 au VimEnter * RainbowParenthesesToggle
@@ -226,7 +215,29 @@ let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
 " TEX-live
+let g:tex_flavor = "latex"
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
-nnoremap <Leader>= :LLPStartPreview<CR>
+
+nnoremap <Leader>` :botright vnew $HOME/Documents/Notes/ProceduralNotes <bar> :vertical resize 25<CR>
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<F6>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" " If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" LIVEDOWN
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+
+autocmd Filetype tex        nnoremap <Leader>= :LLPStartPreview<CR>
+autocmd Filetype markdown   nnoremap <Leader>= :LivedownPreview<CR>
 

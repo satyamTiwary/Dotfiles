@@ -67,6 +67,7 @@ alias gad="git add"
 alias gada="git add . && gst"
 alias gadaa="git add --all && gst"
 alias gadu="git add --update && gst"
+alias gadc="git add .; git commit --message"
 alias gps="git push"
 alias gpu="git pull"
 alias gdf="git diff"
@@ -94,7 +95,10 @@ alias 2yocto="cm $HOME/Public/Yocto-Things"
 
 alias 2dots="cc $HOME/dotfiles"
 alias 2notes="cm $DOCSFOLDER/Notes"
+alias 2pnotes="cm $DOCSFOLDER/Notes/ProceduralNotes"
 alias 2story="cm $DOCSFOLDER/Story-Things"
+
+alias 2snips="cm $HOME/.vim/UltiSnips/"
 
 #Servers
 LINODE_SERVER_IP="172.105.40.131"
