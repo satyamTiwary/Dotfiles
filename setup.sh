@@ -1,13 +1,13 @@
 #!/bin/bash
 
-declare -a file_names=(".bashrc" ".bash_aliases" ".bash_env" ".gitconfig" ".vimrc" ".tmux.conf" ".tmux.conf.local", ".latexmkrc")
+declare -a file_names=(".bashrc" ".bash_aliases" ".bash_env" ".gitconfig" ".vimrc" ".tmux.conf" ".tmux.conf.local" ".latexmkrc")
 echo "Home Directory: $HOME
 " 
 
-chmod +x ./tmuxinator.sh
-chmod +x ./ultisnips.sh
-./tmuxinator.sh
-./ultisnips.sh
+chmod +x ./scripts/tmuxinator.sh
+chmod +x ./scripts/ultisnips.sh
+./scripts/tmuxinator.sh
+./scripts/ultisnips.sh
 echo ${DOCSFOLDER}
 
 chmod +x ./tmuxinator/make_config.sh
@@ -29,14 +29,14 @@ do
     echo "${i}:		${tick}  File created."
   fi
   
-  diff ./"${i}" $HOME/"${i}"
-  difference=$(diff ./${i} $HOME/${i})
+  diff ./conf/"${i}" $HOME/"${i}"
+  difference=$(diff ./conf/${i} $HOME/${i})
   size=${#difference}
   if [ "${size}" -gt 0 ] 
   then
-    if cp ./"${i}" $HOME/"${i}"
+    if cp ./conf/"${i}" $HOME/"${i}"
     then
-      echo "${i}:	${tick} Copied ./${i} to $HOME/${i}"
+      echo "${i}:	${tick} Copied ./conf/${i} to $HOME/${i}"
       source $HOME/${i}
       echo "${i}: 	${tick} file activated."
       copy_count=$((copy_count+1))
