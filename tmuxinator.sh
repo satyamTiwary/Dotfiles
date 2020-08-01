@@ -11,7 +11,7 @@ if command -v tmuxinator &> /dev/null; then
   elif [ -d $HOME/.tmuxinator ]; then
     target="$HOME/.tmuxinator"
   else
-    echo "tmuxinator:   ${tick} Config folder not found."
+    echo "tmuxinator:   ${tick} folder not found."
     exit
   fi
 

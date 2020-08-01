@@ -86,6 +86,7 @@ source "$HOME/.bash_env_local"
 
 #Directories
 alias 2docs="cc $DOCSFOLDER"
+alias 2dots="cc $HOME/dotfiles"
 
 alias 2c="cm $DOCSFOLDER/C-Things"
 alias 2cpp="cm $DOCSFOLDER/Cpp-Things"
@@ -93,12 +94,12 @@ alias 2py="cm $DOCSFOLDER/Python-Things"
 alias 2sicp="cm $DOCSFOLDER/SICP-Things"
 alias 2yocto="cm $HOME/Public/Yocto-Things"
 
-alias 2dots="cc $HOME/dotfiles"
+alias 2snips="cm $HOME/.vim/UltiSnips/"
+
 alias 2notes="cm $DOCSFOLDER/Notes"
 alias 2pnotes="cm $DOCSFOLDER/Notes/ProceduralNotes"
-alias 2story="cm $DOCSFOLDER/Story-Things"
 alias 2latex="cm $DOCSFOLDER/Notes/Latex"
-alias 2snips="cm $HOME/.vim/UltiSnips/"
+alias 2story="cm $DOCSFOLDER/Story-Things"
 
 #Servers
 LINODE_SERVER_IP="172.105.40.131"

@@ -5,7 +5,9 @@ echo "Home Directory: $HOME
 " 
 
 chmod +x ./tmuxinator.sh
+chmod +x ./ultisnips.sh
 ./tmuxinator.sh
+./ultisnips.sh
 echo ${DOCSFOLDER}
 
 chmod +x ./tmuxinator/make_config.sh

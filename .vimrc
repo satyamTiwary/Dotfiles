@@ -216,42 +216,42 @@ let g:rbpt_loadcmd_toggle = 0
 
 " VIMTEX
 let g:tex_flavor = "latex"
-let g:vimtex_complete_enabled = 1
-let g:vimtex_compiler_method = 'latexmk'
-let g:vimtex_fold_enabled = 1
-let g:vimtex_view_method = 'skim'
-let g_vimtex_motion_enabled = 0
-let g:vimtex_compiler_latexmk = {
-\				 'backend'    : 'process',
-\				 'background' : 1,
-\				 'build_dir'  : 'log',
-\				 'callback'   : 1,
-\				 'continuous' : 1,
-\				 'executable' : 'latexmk',
-\				 'options'    : [
-\				 		'-pdf',
-\				 		'-verbose',
-\				 		'-file-line-error',
-\				 		'-interaction=nonstopmode',
-\				 		],
-\				}
-if !exists('g:ycm_semantic_triggers')
-	let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-\					're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-\					're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-\					're!\\hyperref\[[^]]*',
-\					're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-\					're!\\(include(only)?|input){[^}]*',
-\					're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-\					're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-\					're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-\					're!\\usepackage(\s*\[[^]]*\])?\s*\{[^}]*',
-\					're!\\documentclass(\s*\[[^]]*\])?\s*\{[^}]*',
-\					're!\\[A-Za-z]*',
-\					]
-
+"let g:vimtex_complete_enabled = 1
+"let g:vimtex_compiler_method = 'latexmk'
+"let g:vimtex_fold_enabled = 1
+"let g:vimtex_view_method = 'skim'
+"let g_vimtex_motion_enabled = 0
+"let g:vimtex_compiler_latexmk = {
+"\				 'backend'    : 'process',
+"\				 'background' : 1,
+"\				 'build_dir'  : 'log',
+"\				 'callback'   : 1,
+"\				 'continuous' : 1,
+"\				 'executable' : 'latexmk',
+"\				 'options'    : [
+"\				 		'-pdf',
+"\				 		'-verbose',
+"\				 		'-file-line-error',
+"\				 		'-interaction=nonstopmode',
+"\				 		],
+"\				}
+"if !exists('g:ycm_semantic_triggers')
+"	let g:ycm_semantic_triggers = {}
+"endif
+"let g:ycm_semantic_triggers.tex = [
+"\					're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+"\					're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+"\					're!\\hyperref\[[^]]*',
+"\					're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+"\					're!\\(include(only)?|input){[^}]*',
+"\					're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
+"\					're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
+"\					're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
+"\					're!\\usepackage(\s*\[[^]]*\])?\s*\{[^}]*',
+"\					're!\\documentclass(\s*\[[^]]*\])?\s*\{[^}]*',
+"\					're!\\[A-Za-z]*',
+"\					]
+"
 " LIVE-TEX
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
