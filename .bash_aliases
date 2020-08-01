@@ -97,7 +97,7 @@ alias 2dots="cc $HOME/dotfiles"
 alias 2notes="cm $DOCSFOLDER/Notes"
 alias 2pnotes="cm $DOCSFOLDER/Notes/ProceduralNotes"
 alias 2story="cm $DOCSFOLDER/Story-Things"
-
+alias 2latex="cm $DOCSFOLDER/Notes/Latex"
 alias 2snips="cm $HOME/.vim/UltiSnips/"
 
 #Servers

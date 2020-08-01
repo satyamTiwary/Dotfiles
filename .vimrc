@@ -36,9 +36,9 @@ call plug#begin('~/.vim/plugged')
 " essentials
 Plug 'vim-utils/vim-man', { 'on': 'Man' } 
 Plug 'valloric/youcompleteme'
-Plug 'jremmen/vim-ripgrep'
+Plug 'jremmen/vim-ripgrep', { 'on': 'Rg' }
 Plug 'kien/ctrlp.vim'
-Plug 'mbbill/undotree'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'majutsushi/tagbar'
 Plug 'airblade/vim-gitgutter'
 Plug 'chiel92/vim-autoformat'
@@ -103,7 +103,7 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-nnoremap <leader>u :UndotreeShow<CR>
+"nnoremap <leader>u :UndotreeShow<CR>
 nmap <F10> :UndotreeToggle<CR>
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>
@@ -117,8 +117,8 @@ nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <up> :3wincmd -<CR>
 nmap <silent> <down> :3wincmd +<CR>
 
-nnoremap <silent> <Leader>gd :YcmCompleter Goto<CR>
-nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+"nnoremap <silent> <Leader>gd :YcmCompleter Goto<CR>
+"nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
 
 nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <right> :3wincmd ><CR>
@@ -219,7 +219,7 @@ let g:tex_flavor = "latex"
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
 
-nnoremap <Leader>` :botright vnew $HOME/Documents/Notes/ProceduralNotes <bar> :vertical resize 25<CR>
+nnoremap <Leader>` :botright vnew $HOME/Documents/Notes/ProceduralNotes <bar> :vertical resize 30<CR>
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
