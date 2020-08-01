@@ -1,4 +1,4 @@
-# user-configuration
+# Dotfiles 
 .bashrc, .vimrc, etc for sharing between multiple os instances
 
 1. Run this setup file
