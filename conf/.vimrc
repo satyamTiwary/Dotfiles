@@ -278,3 +278,9 @@ let g:livedown_port = 1337
 autocmd Filetype tex        nnoremap <Leader>= :LLPStartPreview<CR>
 autocmd Filetype markdown   nnoremap <Leader>= :LivedownPreview<CR>
 
+let g:Tex_BibtexFlavor = 'biber'
+"let g:Tex_CompileRule_pdf = 'pdflatex --synctex=-1 -src-specials -interaction=nonstopmode -file-line-error-style $*'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='pdf'
+let g:Tex_CompileRule_pdf = 'mkdir -p build && pdflatex -output-directory=build -interaction=nonstopmode $* && cp *.bib build && cd build && bibtex %:r && cd .. && pdflatex -output-directory=build -interaction=nonstopmode $* && mv build/$*.pdf .'
+
