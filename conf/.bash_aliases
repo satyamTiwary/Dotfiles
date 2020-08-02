@@ -62,6 +62,7 @@ alias txdel="tx delete"
 alias txcp="tx copy"
 
 #Git Aliases
+function gclone() { git clone $MYGIT/$1; }
 alias gst="git status --short"
 alias gad="git add"
 alias gada="git add . && gst"
@@ -83,7 +84,6 @@ alias gin="git init"
 function glf() { glod --grep="$1"; }
 
 source "$HOME/.bash_env_local"
-
 #Directories
 alias 2docs="cc $DOCSFOLDER"
 alias 2dots="cc $HOME/dotfiles"

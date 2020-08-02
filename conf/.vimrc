@@ -71,7 +71,8 @@ Plug 'wlangstroth/vim-racket', {'for': ['scheme', 'racket', 'lisp']}
 Plug 'kergoth/vim-bitbake', {'for': 'bitbake'}
 
 " Tex
-Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'} | Plug 'shime/vim-livedown', {'for': 'markdown'}
+Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
+Plug 'shime/vim-livedown'
 Plug 'lervag/vimtex', {'for': 'tex'}
 
 call plug#end()
@@ -275,7 +276,8 @@ let g:livedown_open = 1
 " the port on which Livedown server will run
 let g:livedown_port = 1337
 
-autocmd Filetype tex        nnoremap <Leader>= :LLPStartPreview<CR>
+"autocmd Filetype tex        
+nnoremap <Leader>= :LLPStartPreview<CR>
 autocmd Filetype markdown   nnoremap <Leader>= :LivedownPreview<CR>
 
 let g:Tex_BibtexFlavor = 'biber'
