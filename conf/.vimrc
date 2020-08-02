@@ -71,7 +71,8 @@ Plug 'wlangstroth/vim-racket', {'for': ['scheme', 'racket', 'lisp']}
 Plug 'kergoth/vim-bitbake', {'for': 'bitbake'}
 
 " Tex
-Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'} | Plug 'shime/vim-livedown', {'for': 'markdown'}
+Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
+Plug 'shime/vim-livedown'
 Plug 'lervag/vimtex', {'for': 'tex'}
 
 call plug#end()

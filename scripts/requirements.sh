@@ -14,7 +14,8 @@ then
   echo "requirements: Molokai colors file created/updated."
 else
 
-  sudo apt install vim tmux npm python3 exuberant-ctags tmuxinator net-tools texlive-binaries tree ipython3 tree poppler-utils 
+  sudo apt install vim tmux npm python3 exuberant-ctags tmuxinator net-tools texlive-binaries tree ipython3 tree poppler-utils texlive-latex-extra
+latexmk
 
   pip3 install pynvim autopep8 cmake_format
   sudo npm install -g eslint js-beautify remark-cli scmindent livedown
