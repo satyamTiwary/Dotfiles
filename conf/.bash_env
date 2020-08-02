@@ -6,9 +6,10 @@ export EMAIL="satyamtiwary@vvbiotech.com"
 export MYGIT="git@github.com:satyamTiwary"
 
 export EDITOR="vim"
+export DOCSFOLDER="$HOME/Documents"
 
-if [ -f $HOME/.bash_env_local ]; then
-  source ./.bash_env_local
-else
-  export DOCSFOLDER="$HOME/Documents"
-fi
+#if [ -f $HOME/.bash_env_local ]; then
+#  source ./.bash_env_local
+#else
+#  export DOCSFOLDER="$HOME/Documents"
+#fi
