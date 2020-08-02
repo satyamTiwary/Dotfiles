@@ -83,8 +83,7 @@ alias gin="git init"
 
 function glf() { glod --grep="$1"; }
 
-source "$HOME/.bash_env_local"
-
+#source "$HOME/.bash_env_local"
 #Directories
 alias 2docs="cc $DOCSFOLDER"
 alias 2dots="cc $HOME/dotfiles"

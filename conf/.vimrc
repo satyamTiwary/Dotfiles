@@ -275,7 +275,8 @@ let g:livedown_open = 1
 " the port on which Livedown server will run
 let g:livedown_port = 1337
 
-autocmd Filetype tex        nnoremap <Leader>= :LLPStartPreview<CR>
+"autocmd Filetype tex        
+nnoremap <Leader>= :LLPStartPreview<CR>
 autocmd Filetype markdown   nnoremap <Leader>= :LivedownPreview<CR>
 
 let g:Tex_BibtexFlavor = 'biber'
