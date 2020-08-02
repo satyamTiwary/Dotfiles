@@ -3,6 +3,7 @@ echo 'bash_env: environment variables found'
 
 export NAME="SatyamTiwary"
 export EMAIL="satyamtiwary@vvbiotech.com"
+export MYGIT="git@github.com:satyamTiwary"
 
 export EDITOR="vim"
 

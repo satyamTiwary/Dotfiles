@@ -62,6 +62,7 @@ alias txdel="tx delete"
 alias txcp="tx copy"
 
 #Git Aliases
+function gclone() { git clone $MYGIT/$1; }
 alias gst="git status --short"
 alias gad="git add"
 alias gada="git add . && gst"
