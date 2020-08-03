@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a file_names=(".bashrc" ".bash_aliases" ".bash_env" ".gitconfig" ".vimrc" ".tmux.conf" ".tmux.conf.local" ".latexmkrc")
+declare -a file_names=(".bashrc" ".bash_aliases" ".bash_env" ".gitconfig" ".vimrc" ".tmux.conf" ".tmux.conf.local" ".latexmkrc" ".gitignore")
 echo "Home Directory: $HOME
 " 
 

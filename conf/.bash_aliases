@@ -12,7 +12,8 @@ alias cd="cc"
 
 #Basic Folder Navigation
 alias la="ls -a" #added for compatibility with windows
-alias ts="tree -L 2"
+alias ll2="tree -L 2"
+function lt() { tree --prune -I $(cat .gitignore ~/.gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|") -L 2; }
 #alias .="ls -a"
 alias ..="cc .."
 alias ...="cc ../.."
