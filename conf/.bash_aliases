@@ -14,6 +14,7 @@ alias cd="cc"
 alias la="ls -a" #added for compatibility with windows
 alias ll2="tree -L 2"
 function lt() { tree --prune -I $(cat .gitignore ~/.gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|") -L 2; }
+alias ltc="lt | column"
 #alias .="ls -a"
 alias ..="cc .."
 alias ...="cc ../.."
