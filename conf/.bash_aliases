@@ -101,6 +101,9 @@ alias 2pnotes="cm $DOCSFOLDER/Notes/ProceduralNotes"
 alias 2latex="cm $DOCSFOLDER/Notes/Latex"
 alias 2story="cm $DOCSFOLDER/Story-Things"
 
+# Open
+alias obib="vi $DOCSFOLDER/Notes/Latex/main.bib"
+
 #Servers
 LINODE_SERVER_IP="172.105.40.131"
 LINODE_USER="satyam"
