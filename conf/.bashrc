@@ -140,6 +140,7 @@ export PATH="/home/satyam/Installs/BSC/inst/bin/:$PATH"
 
 
 echo
+echo "==="
 echo "bashrc: satyamtiwary/dotfiles (main)"
 echo "---"
 # Load bash_env file if it exists
@@ -154,6 +155,6 @@ echo "tmux: list of sessions in progress:"
 tmux list-sessions
 echo "tmux: tska    Tmux Sessions Kill All"
 echo "tmux: tskill    Tmux Kill most recent session"
-echo "---"
+echo "==="
 echo
 
