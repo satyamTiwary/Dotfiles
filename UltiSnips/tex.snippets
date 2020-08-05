@@ -1,17 +1,33 @@
 snippet article "Template for an article" b
 \documentclass{article}
+
+\usepackage{graphics}
+\usepackage{biblatex}
+\usepackage[export]{adjustbox}
+
+\addbibresource{~/Documens/Notes/Latex/main.bib}
+
+\graphicspath{ {images/} }
+
 \title{$1:Title}
 \author{$2:Author}
 \date{2020}
 
 \begin{document}
-\maketitle
+\maketitle 
 
 % Sample Code
 %\section{Section Name}
 %Sentences\footnote{This is a footnote.}
 %Text \cite{deleuze_2013}
-%\printbibliography
+%\begin{figure}
+  %\includegraphics[width=\textwidth]{iamagename}
+  %\includegraphics[max width=\textwidth]{imagename}
+  %\caption{Figure caption}
+  %\label{fig:boat1}
+%\end{figure}
+% end of sample code
 
+%\printbibliography
 \end{document}
 endsnippet
