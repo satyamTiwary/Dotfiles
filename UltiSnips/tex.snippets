@@ -1,20 +1,17 @@
 snippet article "Template for an article" b
 \documentclass{article}
 
-\usepackage{graphics}
-\usepackage{biblatex}
-\usepackage[export]{adjustbox}
+\include{base}
 
 \addbibresource{~/Documens/Notes/Latex/main.bib}
-
 \graphicspath{ {images/} }
 
-\title{$1:Title}
-\author{$2:Author}
+\title{$1}
+\author{$2}
 \date{2020}
 
 \begin{document}
-\maketitle 
+\maketitle
 
 % Sample Code
 %\section{Section Name}
@@ -33,5 +30,50 @@ snippet figure "Add a figure with caption to a tex document" -b
   \caption{$2}
   \label{$3}
 \end{figure}
+endsnippet
+
+
+snippet code "Add a code snippet to a tex document" -b
+\begin{lstlisting}[language=$1, caption=$2]
+$3
+\end{lstlisting}
+endsnippet
+
+
+snippet tex-base "Add the tex base configurations" -b
+\usepackage[utf8]{inputenc}
+
+\usepackage{biblatex}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 endsnippet
 
