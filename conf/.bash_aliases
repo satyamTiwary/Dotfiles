@@ -8,6 +8,8 @@ cm() {
   cc "$@";
 }
 
+alias hi="history 10"
+
 alias cd="cc"
 
 #Basic Folder Navigation

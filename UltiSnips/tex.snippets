@@ -2,6 +2,7 @@ snippet article "Template for an article" b
 \documentclass{article}
 
 \include{base}
+%\usetikzlibrary{⟨list of libraries separated by commas⟩}
 
 \addbibresource{~/Documens/Notes/Latex/main.bib}
 \graphicspath{ {images/} }
@@ -24,6 +25,13 @@ snippet article "Template for an article" b
 endsnippet
 
 
+snippet begin "begin and end a tex block" -b
+\begin{$1}
+$2
+\end{$1}
+endsnippet 
+
+
 snippet figure "Add a figure with caption to a tex document" -b
 \begin{figure}
   \includegraphics[max width=\textwidth]{$1}
@@ -40,15 +48,34 @@ $3
 endsnippet
 
 
+snippet pseudocode "Add pseudocode to the tex document" -b
+\begin{algorithm}
+\caption{$1}
+\begin{algorithmic}[1]
+%en.wikibooks.org/wiki/LaTeX/Algorithms#Typesetting_using_the_algorithmic_package
+%\Require $$
+%\Eensure $$
+$2
+\end{algorithmic}
+\end{algorithm}
+%www.math-linux.com/latex-26/faq/latex-faq/article/how-to-write-algorithm-and-pseudocode-in-latex-usepackage-algorithm-usepackage-algorithmic 
+endsnippet 
+
+
 snippet tex-base "Add the tex base configurations" -b
 \usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
 
 \usepackage{biblatex}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \usepackage{booktabs}
 \usepackage{listings}
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
 \usepackage{xcolor}
+\usepackage{tikz}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -75,5 +102,8 @@ snippet tex-base "Add the tex base configurations" -b
 }
 
 \lstset{style=mystyle}
+
+%\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
 endsnippet
 
