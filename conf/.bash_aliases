@@ -113,3 +113,5 @@ LINODE_SERVER_IP="172.105.40.131"
 LINODE_USER="satyam"
 alias linode="mosh ${LINODE_USER}@${LINODE_SERVER_IP}"
 
+#Applications
+alias matl="matlab -nodesktop -nosplash"
