@@ -7,6 +7,7 @@ filetype plugin on
 set ruler
 set visualbell
 set encoding=utf-8
+set spell spelllang=en_us
 
 set tabstop=2 softtabstop=2
 set shiftwidth=2
@@ -30,7 +31,7 @@ set hlsearch
 set colorcolumn=80
 highlight colorColumn ctermbg=0 guibg=lightgrey
 
-" VimPlug Installations
+" Vim Plug Installations
 call plug#begin('~/.vim/plugged')
 
 " essentials
@@ -99,17 +100,14 @@ let g:netrw_winsize=25
 
 " Leader Shortcuts
 " The best part.
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-
-"nnoremap <leader>u :UndotreeShow<CR>
-nmap <F10> :UndotreeToggle<CR>
+nnoremap <leader><left> :wincmd h<CR>
+nnoremap <leader><down> :wincmd j<CR>
+nnoremap <leader><up> :wincmd k<CR>
+nnoremap <leader><right> :wincmd l<CR>
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>
 nnoremap <Leader>ps :Rg<SPACE>
-nnoremap <Leader>cf :ClangFormat<CR>
+"nnoremap <Leader>cf :ClangFormat<CR>
 
 nnoremap <Leader>sv :wincmd v<CR>
 
@@ -124,11 +122,14 @@ nmap <silent> <down> :3wincmd +<CR>
 nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <right> :3wincmd ><CR>
 
-nmap <F11> :TagbarToggle<CR>
-nmap <F9> :Autoformat<CR>
+nnoremap <leader>n :botright vnew $HOME/Documents/Notes/ProceduralNotes <bar> :vertical resize 40<CR>
+nnoremap <F9> :TagbarToggle<CR>
+nnoremap <F10> :call ToggleNetrw()<CR>
+nnoremap <F11> :UndotreeToggle<CR>
+nnoremap <F12> :w<CR>
 
-nmap <Leader>. :bnext<CR>
-nmap <Leader>, :bprev<CR>
+nnoremap <Leader>. :bnext<CR>
+nnoremap <Leader>, :bprev<CR>
 
 let g:NetrwIsOpen=0
 
@@ -148,14 +149,6 @@ function! ToggleNetrw()
   endif
 endfunction
 
-noremap <silent> <F12> :call ToggleNetrw()<CR>
-
-"nnoremap <leader>av :ArdullllinoVerify<CR>
-"nnoremap <leader>au :ArduinoUpload<CR>
-"nnoremap <leader>ad :ArduinoUploadAndSerial<CR>
-"nnoremap <leader>ab :ArduinoChooseBoard<CR>
-"nnoremap <leader>ap :ArduinoChooseProgrammer<CR>
-
 " vim-airline: status bar
 let g:airline#extensions#tabline#enabled = 1
 
@@ -172,11 +165,6 @@ if has("autocmd")
   au BufReadPost *.rkt,*.rktl set filetype=scheme
 endif
 " let g:syntastic_enable_racket_racket_checker=1
-
-" Syntastic recommended settings
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -236,48 +224,46 @@ let g:vimtex_compiler_latexmk = {
       \           '-interaction=nonstopmode',
       \           ],
       \       }
-"if !exists('g:ycm_semantic_triggers')
-" let g:ycm_semantic_triggers = {}
-"endif
-"let g:ycm_semantic_triggers.tex = [
-      "\          're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-      "\          're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-      "\          're!\\hyperref\[[^]]*',
-      "\          're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-      "\          're!\\(include(only)?|input){[^}]*',
-      "\          're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-      "\          're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-      "\          're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-      "\          're!\\usepackage(\s*\[[^]]*\])?\s*\{[^}]*',
-      "\          're!\\documentclass(\s*\[[^]]*\])?\s*\{[^}]*',
-      "\          're!\\[A-Za-z]*',
-      "\          ]
-"
+if !exists('g:ycm_semantic_triggers')
+ let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.tex = [
+     \          're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
+     \          're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
+     \          're!\\hyperref\[[^]]*',
+     \          're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
+     \          're!\\(include(only)?|input){[^}]*',
+     \          're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
+     \          're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
+     \          're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
+     \          're!\\usepackage(\s*\[[^]]*\])?\s*\{[^}]*',
+     \          're!\\documentclass(\s*\[[^]]*\])?\s*\{[^}]*',
+     \          're!\\[A-Za-z]*',
+     \          ]
+
 " LIVE-TEX
 autocmd Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Preview'
 
-nnoremap <Leader>` :botright vnew $HOME/Documents/Notes/ProceduralNotes <bar> :vertical resize 30<CR>
-
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<F6>"
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<F7>"
+let g:UltiSnipsJumpBackwardTrigger="<F5>"
 
 " " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
 " LIVEDOWN
 " should markdown preview get shown automatically upon opening markdown buffer
-let g:livedown_autorun = 0
+let g:livedown_autorun = 1
 " should the browser window pop-up upon previewing
 let g:livedown_open = 1
 " the port on which Livedown server will run
 let g:livedown_port = 1337
 
 "autocmd Filetype tex        
-nnoremap <Leader>= :LLPStartPreview<CR>
+autocmd Filetype tex        nnoremap <Leader>= :LLPStartPreview<CR>
 autocmd Filetype markdown   nnoremap <Leader>= :LivedownPreview<CR>
 
 let g:Tex_BibtexFlavor = 'biber'
@@ -285,4 +271,14 @@ let g:Tex_BibtexFlavor = 'biber'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf'
 let g:Tex_CompileRule_pdf = 'mkdir -p build && pdflatex -output-directory=build -interaction=nonstopmode $* && cp *.bib build && cd build && bibtex %:r && cd .. && pdflatex -output-directory=build -interaction=nonstopmode $* && mv build/$*.pdf .'
+
+" AUTOFORMAT 
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+
+let g:formatdef_my_custom_clang = '"clang-format -style=file"' 
+let g:formatters_cpp = ['my_custom_clang']
+
+au BufWrite * :Autoformat
 
