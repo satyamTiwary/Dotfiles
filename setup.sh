@@ -37,8 +37,6 @@ do
     if cp ./conf/"${i}" $HOME/"${i}"
     then
       echo "${i}:	${tick} Copied ./conf/${i} to $HOME/${i}"
-      source "$HOME/${i}"
-      echo "${i}: 	${tick} file activated."
       copy_count=$((copy_count+1))
     else
       echo "${i}:	${cross} Copy Failed!"

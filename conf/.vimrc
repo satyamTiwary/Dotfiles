@@ -107,7 +107,6 @@ nnoremap <leader><right> :wincmd l<CR>
 
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 25<CR>
 nnoremap <Leader>ps :Rg<SPACE>
-"nnoremap <Leader>cf :ClangFormat<CR>
 
 nnoremap <Leader>sv :wincmd v<CR>
 

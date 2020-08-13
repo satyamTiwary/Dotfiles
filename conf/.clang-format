@@ -4,7 +4,7 @@ IndentWidth: 4
 ---
 Language: Cpp
 # Force pointers to the type for C++.
-Standard: Cpp11
+Standard: c++20
 
 DerivePointerAlignment: false
 PointerAlignment: Left
@@ -35,4 +35,7 @@ SpaceBeforeAssignmentOperators: true
 SpaceBeforeCpp11BracedList: true
 SpaceBeforeInheritanceColon: true
 SpaceBeforeParens: NonEmptyParentheses
+
+FixNamespaceComments: true
+SpacesBeforeTrailingComments: 4
 ---

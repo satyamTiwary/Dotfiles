@@ -16,14 +16,20 @@ alias cd="cc"
 alias la="ls -a" #added for compatibility with windows
 function lt() { tree -a --prune -I $(cat .gitignore ~/.gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|") -L 2; }
 alias ltc="lt | column"
-#alias .="ls -a"
 alias ..="cc .."
 alias ...="cc ../.."
 alias ....="cc ../../.."
 alias .....="cc ../../../.."
 alias ~="cc $HOME"
-alias o="xdg-open ." #TODO: make it applicable to windows too
 alias df="df -h"
+function o() { 
+  if [ ! command -v xdg-open &> /dev/null  ] 
+  then
+    xdg-open .
+  else
+    vim .
+  fi 
+  }
 
 #Edit Aliases
 alias bashrc="vim $HOME/.bash_aliases"
