@@ -1,6 +1,6 @@
 #Helper Functions
-cc() { cd "$@" && la; }
-cm() {
+function cc() { cd "$@" && la; }
+function cm() {
   if [ ! -e "$@" ]
   then
     mkdir "$@"
@@ -22,7 +22,7 @@ alias ....="cc ../../.."
 alias .....="cc ../../../.."
 alias ~="cc $HOME"
 alias df="df -h"
-o() { 
+function o() { 
   if ! command -v X &> /dev/null 
   then
     vim .
