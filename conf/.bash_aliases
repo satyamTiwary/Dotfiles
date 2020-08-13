@@ -22,14 +22,14 @@ alias ....="cc ../../.."
 alias .....="cc ../../../.."
 alias ~="cc $HOME"
 alias df="df -h"
-function o() { 
-  if [ ! command -v xdg-open &> /dev/null  ] 
+o() { 
+  if ! command -v X &> /dev/null 
   then
-    xdg-open .
-  else
     vim .
+  else
+    xdg-open .
   fi 
-  }
+}
 
 #Edit Aliases
 alias bashrc="vim $HOME/.bash_aliases"
