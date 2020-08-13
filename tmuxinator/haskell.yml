@@ -35,9 +35,10 @@ windows:
       layout: main-vertical
       panes:
         - ls -a
-        - hugs
+        - ghci
+        - cd ~/Documents/Notes/ProceduralNotes/haskell && ls -a 
   - notes:
       layout: main-vertical
       panes:
-        - cd ~/Documents/Notes/ProceduralNotes/haskell && ls -a
+        - 
 
