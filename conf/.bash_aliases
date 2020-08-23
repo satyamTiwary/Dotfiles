@@ -103,6 +103,7 @@ alias 2py="cm $DOCSFOLDER/Python-Things"
 alias 2sicp="cm $DOCSFOLDER/SICP-Things"
 alias 2yocto="cm $HOME/Public/Yocto-Things"
 alias 2haskell="cm $DOCSFOLDER/Haskell-Things"
+alias 2bsc="cm $DOCSFOLDER/Bluespec-Things"
 
 alias 2snips="cm $HOME/.vim/UltiSnips/"
 
