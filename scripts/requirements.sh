@@ -4,57 +4,59 @@
 # Over time, these can be presented here either as notes or an executable shell file
 
 function cli(){
-    echo 
-    echo "cli mode installations"
-    echo 
-    sudo apt -y install vim tmux npm python3 exuberant-ctags tmuxinator net-tools texlive-binaries tree ipython3 tree poppler-utils texlive-latex-extra linux-tools-generic ghc hugs latexmk llvm clang lldb cabal-install 
-    cabal update
-    sudo apt-get -y install texlive-latex-base texlive-latex-extra asciidoctor
-    pip3 -y install pynvim autopep8 cmake_format
-    sudo npm install -g eslint js-beautify remark-cli scmindent livedown
+  echo 
+  echo "========================"
+  echo " CLI mode installations"
+  echo "========================"
+  echo 
+  sudo apt -y install vim tmux npm python3 exuberant-ctags tmuxinator net-tools texlive-binaries tree ipython3 tree poppler-utils texlive-latex-extra linux-tools-generic ghc hugs latexmk llvm clang lldb cabal-install 
+  cabal update
+  sudo apt-get -y install texlive-latex-base texlive-latex-extra asciidoctor pandoc graphviz ttf-mscorefonts-installer 
+  pip3 -y install pynvim autopep8 cmake_format
+  sudo npm install -g eslint js-beautify remark-cli scmindent livedown
 
-    # Repo tools
-    mkdir $HOME/bin
-    PATH=$HOME/bin:$PATH
-    curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-    chmod a+x ~/bin/repo
+  # Repo tools
+  mkdir $HOME/bin
+  PATH=$HOME/bin:$PATH
+  curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  chmod a+x ~/bin/repo 
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-    if [ ! -e "$HOME/.vim/colors" ]
-    then
-      mkdir "$HOME/.vim/colors"
-      echo "requirements: directory for color scheme monokai made"
-    fi
-    cp ./assets/monokai-colors/monokai.vim $HOME/.vim/colors/
-    echo "requirements: Molokai colors file created/updated."
-    echo 
-    echo "---"
-    echo
+  if [ ! -e "$HOME/.vim/colors" ]
+  then
+    mkdir "$HOME/.vim/colors"
+    echo "requirements: directory for color scheme monokai made"
+  fi
+  cp ./assets/monokai-colors/monokai.vim $HOME/.vim/colors/
+  echo "requirements: Molokai colors file created/updated."
+  echo 
+  echo "========================"
+  echo
 }
 
 function gui(){
-    echo
-    echo "graphical mode installations"
-    echo 
-    sudo apt-get -y install ghc libghc-regex-compat-dev libghc-syb-dev libghc-old-time-dev libghc-split-dev tcl-dev autoconf gperf flex bison iverilog verilator gtkwave 
-    sudo snap -y install --classic code typora
-    echo
-    echo "---"
-    echo 
+  echo
+  echo "========================"
+  echo " GUI mode installations"
+  echo "========================"
+  echo 
+  sudo apt-get -y install ghc libghc-regex-compat-dev libghc-syb-dev libghc-old-time-dev libghc-split-dev tcl-dev autoconf gperf flex bison iverilog verilator gtkwave 
+  sudo snap -y install --classic code typora
+  echo
+  echo "========================="
+  echo 
 }
 
 function help(){
-    echo 
-    echo "./requirements.sh [-i|-g|-h]"
-    echo 
-    echo " -c | --cli    : Install Base Set of Packages associated with a command line system"
-    echo " -g | --gui    : Install Packages associated with a graphical system"
-    echo " -h | --help   : Print help text associated with this script"
-    echo
-    echo "---"
-    echo
+  echo 
+  echo "./requirements.sh [-i|-g|-h]"
+  echo 
+  echo " -c | --cli    : Install Packages associated with a command line system"
+  echo " -g | --gui    : Install Packages associated with a graphical system"
+  echo " -h | --help   : Print help text associated with this script"
+  echo
+  echo "---"
+  echo
   }
 
 
