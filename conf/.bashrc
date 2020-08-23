@@ -136,9 +136,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/home/satyam/Installs/BSC/inst/bin/:$PATH"
-
-
 echo
 echo "==="
 echo "bashrc: satyamtiwary/dotfiles (main)"

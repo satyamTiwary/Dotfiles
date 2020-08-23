@@ -17,3 +17,6 @@ export NOTES="$DOCSFOLDER/Notes"
 #else
 #  export DOCSFOLDER="$HOME/Documents"
 #fi
+
+export PATH="/opt/bluespec/bin:$PATH"
+
