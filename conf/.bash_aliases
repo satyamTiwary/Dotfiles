@@ -109,7 +109,12 @@ alias 2bnfc="cm $DOCSFOLDER/BNFC-Things"
 alias 2snips="cm $HOME/.vim/UltiSnips/"
 
 alias 2notes="cm $DOCSFOLDER/Notes"
-alias 2pnotes="cm $DOCSFOLDER/Notes/ProceduralNotes"
+
+function 2pro() {
+  cm $DOCSFOLDER/Notes/ProceduralNotes/$1
+}
+complete -W "c cpp linux haskell python React html-css markup yocto riscv git installation-history" 2pro 
+
 alias 2latex="cm $DOCSFOLDER/Notes/Latex"
 alias 2story="cm $DOCSFOLDER/Story-Things"
 
