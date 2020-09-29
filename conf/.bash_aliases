@@ -8,7 +8,7 @@ function cm() {
   cc "$@";
 }
 
-alias hi="history 10"
+alias his="history 10"
 
 alias cd="cc"
 
@@ -44,7 +44,9 @@ alias tsls="tmux list-sessions"
 alias tls="tsls"
 alias tsnew="tmux new -s"
 alias tsatt="tmux attach -t"
+alias tsat="tmux attach -t"
 alias tsdet="tmux detach"
+alias tsdett="tmux detach"
 alias tssw="tmux switch -t"
 alias tska="tmux kill-server && tsls"
 alias tskill="tmux kill-session && tsls"
