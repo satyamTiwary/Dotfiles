@@ -9,6 +9,10 @@ set visualbell
 set encoding=utf-8
 set spell spelllang=en_us
 
+set relativenumber
+set number
+set number relativenumber
+
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
