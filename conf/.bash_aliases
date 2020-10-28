@@ -91,6 +91,8 @@ alias gloga="git log --graph --oneline --decorate --all"
 alias glog="git log --graph --oneline --decorate --max-count=10"
 alias glod="git log --pretty=format:'%h %ad %s' --date=short --all"
 alias gin="git init"
+alias gcb="git checkout -b"
+
 
 function glf() { glod --grep="$1"; }
 
