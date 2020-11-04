@@ -9,9 +9,9 @@ function cli(){
   echo " CLI mode installations"
   echo "========================"
   echo 
-  sudo apt -y install vim tmux npm python3 exuberant-ctags tmuxinator net-tools texlive-binaries tree ipython3 tree poppler-utils texlive-latex-extra linux-tools-generic ghc hugs latexmk llvm clang lldb cabal-install bnfc doxygen
+  sudo apt -y install vim tmux npm python3 exuberant-ctags tmuxinator net-tools texlive-binaries tree ipython3 tree poppler-utils texlive-latex-extra linux-tools-generic ghc hugs latexmk llvm clang lldb cabal-install bnfc doxygen curl python-pip virtualenv 
   cabal update cmake-curses-gui
-  sudo apt-get -y install texlive-latex-base texlive-latex-extra asciidoctor pandoc graphviz ttf-mscorefonts-installer gcc-avr avr-lib
+  sudo apt-get -y install texlive-latex-base texlive-latex-extra asciidoctor pandoc graphviz ttf-mscorefonts-installer gcc-avr 
   pip3 -y install pynvim autopep8 cmake_format
   sudo npm install -g eslint js-beautify remark-cli scmindent livedown
 
