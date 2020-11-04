@@ -35,6 +35,8 @@ function o() {
 alias bashrc="vim $HOME/.bash_aliases"
 alias rebash="source $HOME/.bashrc && treload"
 alias localenv="vim $HOME/.bash_env_local"
+PROMPT_COMMAND='if [[ "$bashrc" != "$PWD" && "$PWD" != "$HOME" && -e .bashrc ]]; then bashrc="$PWD"; . .bashrc; fi'
+
 
 #Tmux Alias
 alias vi="vim"
