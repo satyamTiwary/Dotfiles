@@ -103,6 +103,7 @@ source "$HOME/.bash_env_local"
 #Directories
 alias 2docs="cc $DOCSFOLDER"
 alias 2dots="cc $HOME/dotfiles"
+alias 2dev="cc $HOME/Dev"
 
 alias 2c="cm $DOCSFOLDER/C-Things"
 alias 2cpp="cm $DOCSFOLDER/Cpp-Things"
