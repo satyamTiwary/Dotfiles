@@ -155,3 +155,5 @@ echo "tmux: tskill    Tmux Kill most recent session"
 echo "==="
 echo
 
+export PATH="/home/home/Installs/Arduino-CLI:$PATH";
+
