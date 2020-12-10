@@ -136,6 +136,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/home/home/Installs/Arduino-CLI:$PATH";
+
+
 echo
 echo "==="
 echo "bashrc: satyamtiwary/dotfiles (main)"
@@ -155,5 +158,4 @@ echo "tmux: tskill    Tmux Kill most recent session"
 echo "==="
 echo
 
-export PATH="/home/home/Installs/Arduino-CLI:$PATH";
 
