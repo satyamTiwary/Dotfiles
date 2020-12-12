@@ -1,26 +1,18 @@
 #Helper Functions
-function cc() { cd "$@" && la; }
-function cm() {
-  if [ ! -e "$@" ]
-  then
-    mkdir "$@"
-  fi
-  cc "$@";
-}
+alias la=ls -a
+cl() { cd "$@" && ls; }
 
 alias his="history 10"
-
-alias cd="cc"
 
 #Basic Folder Navigation
 alias la="ls -a" #added for compatibility with windows
 function lt() { tree -a --prune -I $(cat .gitignore ~/.gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|") -L 2; }
 alias ltc="lt | column"
-alias ..="cc .."
-alias ...="cc ../.."
-alias ....="cc ../../.."
-alias .....="cc ../../../.."
-alias ~="cc $HOME"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ~="cd $HOME"
 alias df="df -h"
 function o() { 
   if ! command -v X &> /dev/null 
@@ -101,30 +93,28 @@ function glf() { glod --grep="$1"; }
 
 source "$HOME/.bash_env_local"
 #Directories
-alias 2docs="cc $DOCSFOLDER"
-alias 2dots="cc $HOME/dotfiles"
-alias 2dev="cc $HOME/Dev"
+alias 2docs="cd $DOCSFOLDER"
+alias 2dots="cd $HOME/dotfiles"
+alias 2dev="cd $HOME/Dev"
+alias 2ins="cd $HOME/Installs"
 
-alias 2c="cm $DOCSFOLDER/C-Things"
-alias 2cpp="cm $DOCSFOLDER/Cpp-Things"
-alias 2py="cm $DOCSFOLDER/Python-Things"
-alias 2sicp="cm $DOCSFOLDER/SICP-Things"
-alias 2yocto="cm $HOME/Public/Yocto-Things"
-alias 2haskell="cm $DOCSFOLDER/Haskell-Things"
-alias 2bsc="cm $DOCSFOLDER/Bluespec-Things"
-alias 2bnfc="cm $DOCSFOLDER/BNFC-Things"
+alias 2c="cd $DOCSFOLDER/C-Things"
+alias 2cpp="cd $DOCSFOLDER/Cpp-Things"
+alias 2py="cd $DOCSFOLDER/Python-Things"
+alias 2yocto="cd $HOME/Public/Yocto-Things"
+alias 2haskell="cd $DOCSFOLDER/Haskell-Things"
 
-alias 2snips="cm $HOME/.vim/UltiSnips/"
+alias 2snips="cd $HOME/.vim/UltiSnips/"
 
-alias 2notes="cm $DOCSFOLDER/Notes"
+alias 2notes="cd $DOCSFOLDER/Notes"
 
 function 2pro() {
-  cm $DOCSFOLDER/Notes/ProceduralNotes/$1
+  cd $DOCSFOLDER/Notes/ProceduralNotes/$1
 }
-complete -W "c cpp linux haskell python React html-css markup yocto riscv git installation-history" 2pro 
+#complete -W "c cpp linux haskell python React html-css markup yocto riscv git installation-history" 2pro 
 
-alias 2latex="cm $DOCSFOLDER/Notes/Latex"
-alias 2story="cm $DOCSFOLDER/Story-Things"
+alias 2latex="cd $DOCSFOLDER/Notes/Latex"
+alias 2story="cd $DOCSFOLDER/Story-Things"
 
 # Open
 alias obib="vi $DOCSFOLDER/Notes/Latex/main.bib"
@@ -135,4 +125,4 @@ LINODE_USER="satyam"
 alias linode="mosh ${LINODE_USER}@${LINODE_SERVER_IP}"
 
 #Applications
-alias matl="cm $DOCSFOLDER/Matlab-Things && matlab -nodesktop -nosplash"
+alias matl="cd $DOCSFOLDER/Matlab-Things && matlab -nodesktop -nosplash"
