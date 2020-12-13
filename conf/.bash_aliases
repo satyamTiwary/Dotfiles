@@ -1,6 +1,7 @@
 #Helper Functions
 alias la=ls -a
 cl() { cd "$@" && ls; }
+alias cd=cl
 
 alias his="history 10"
 
