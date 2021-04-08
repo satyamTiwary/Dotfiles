@@ -139,10 +139,8 @@ unset __conda_setup
 export PATH="/home/home/Installs/Arduino-CLI:$PATH";
 
 
-echo
 echo "==="
 echo "bashrc: satyamtiwary/dotfiles (main)"
-echo "---"
 # Load bash_env file if it exists
 if [ -f ~/.bash_env ]; then
   #echo "bash_env: Custom Environment Variables    Found"
@@ -151,11 +149,13 @@ fi
 
 # tmux: list all sessions
 echo
-echo "tmux: list of sessions in progress:"
-tmux list-sessions
-echo "tmux: tska    Tmux Sessions Kill All"
-echo "tmux: tskill    Tmux Kill most recent session"
-echo "==="
-echo
+count=$(tmux list-panes | wc -l)
+if [ ! $count -eq 0 ]; then
+  echo "tmux: list of sessions in progress:"
+  tmux list-sessions
+  echo "tmux: tska    Tmux Sessions Kill All"
+  echo "tmux: tskill    Tmux Kill most recent session"
+fi
 
+echo "==="
 
