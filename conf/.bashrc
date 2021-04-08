@@ -128,9 +128,9 @@ if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
     if [ -f "/home/satyam/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/satyam/anaconda3/etc/profile.d/conda.sh"; echo < "True"
+        . "/home/satyam/anaconda3/etc/profile.d/conda.sh";
     else
-        export PATH="/home/satyam/anaconda3/bin:$PATH"; echo < "False"
+        export PATH="/home/satyam/anaconda3/bin:$PATH";
     fi
 fi
 unset __conda_setup

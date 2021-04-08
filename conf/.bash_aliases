@@ -1,12 +1,11 @@
 #Helper Functions
-alias la=ls -a
+alias la="ls -a"
 cl() { cd "$@" && ls; }
 alias cd=cl
 
 alias his="history 10"
 
 #Basic Folder Navigation
-alias la="ls -a" #added for compatibility with windows
 function lt() { tree -a --prune -I $(cat .gitignore ~/.gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|") -L 2; }
 alias ltc="lt | column"
 alias ..="cd .."
