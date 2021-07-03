@@ -1,37 +1,19 @@
-#Helper Functions
-alias la="ls -a"
-cl() { cd "$@" && ls; }
-alias cd=cl
-
 alias his="history 10"
 
 #Basic Folder Navigation
+alias la="ls -a" #added for compatibility with windows
 function lt() { tree -a --prune -I $(cat .gitignore ~/.gitignore | egrep -v "^#.*$|^[[:space:]]*$" | tr "\\n" "|") -L 2; }
 alias ltc="lt | column"
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
 alias ~="cd $HOME"
 alias df="df -h"
-function o() { 
-  if ! command -v X &> /dev/null 
-  then
-    vim .
-  else
-    xdg-open .
-  fi 
-}
 
 #Edit Aliases
 alias bashrc="vim $HOME/.bash_aliases"
 alias rebash="source $HOME/.bashrc && treload"
 alias localenv="vim $HOME/.bash_env_local"
-PROMPT_COMMAND='if [[ "$bashrc" != "$PWD" && "$PWD" != "$HOME" && -e .bashrc ]]; then bashrc="$PWD"; . .bashrc; fi'
 
 
 #Tmux Alias
-alias vi="vim"
 alias tmux='tmux -u'
 #tmux sessions
 alias tsls="tmux list-sessions"
@@ -84,14 +66,12 @@ alias grbi="git rebase --interactive"
 alias gloga="git log --graph --oneline --decorate --all"
 alias glog="git log --graph --oneline --decorate --max-count=10"
 alias glod="git log --pretty=format:'%h %ad %s' --date=short --all"
-alias gin="git init"
 alias gcb="git checkout -b"
 alias gundo="git reset --soft HEAD~1"
 
 
 function glf() { glod --grep="$1"; }
 
-source "$HOME/.bash_env_local"
 #Directories
 alias 2docs="cd $DOCSFOLDER"
 alias 2dots="cd $HOME/dotfiles"
@@ -101,7 +81,6 @@ alias 2ins="cd $HOME/Installs"
 alias 2c="cd $DOCSFOLDER/C-Things"
 alias 2cpp="cd $DOCSFOLDER/Cpp-Things"
 alias 2py="cd $DOCSFOLDER/Python-Things"
-alias 2yocto="cd $HOME/Public/Yocto-Things"
 alias 2haskell="cd $DOCSFOLDER/Haskell-Things"
 
 alias 2snips="cd $HOME/.vim/UltiSnips/"
@@ -113,16 +92,8 @@ function 2pro() {
 }
 #complete -W "c cpp linux haskell python React html-css markup yocto riscv git installation-history" 2pro 
 
-alias 2latex="cd $DOCSFOLDER/Notes/Latex"
-alias 2story="cd $DOCSFOLDER/Story-Things"
-
 # Open
-alias obib="vi $DOCSFOLDER/Notes/Latex/main.bib"
-
-#Servers
-LINODE_SERVER_IP="172.105.40.131"
-LINODE_USER="satyam"
-alias linode="mosh ${LINODE_USER}@${LINODE_SERVER_IP}"
+alias bib="cd $DOCSFOLDER/Notes/assets/Bib"
 
 #Applications
-alias matl="cd $DOCSFOLDER/Matlab-Things && matlab -nodesktop -nosplash"
+export CMAKE_GENERATOR=Ninja

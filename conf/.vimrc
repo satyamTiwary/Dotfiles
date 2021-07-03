@@ -35,12 +35,14 @@ set hlsearch
 set colorcolumn=80
 highlight colorColumn ctermbg=0 guibg=lightgrey
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " Vim Plug Installations
 call plug#begin('~/.vim/plugged')
 
 " essentials
 Plug 'vim-utils/vim-man', { 'on': 'Man' }
-Plug 'valloric/youcompleteme'
+"Plug 'valloric/youcompleteme'
 Plug 'jremmen/vim-ripgrep', { 'on': 'Rg' }
 Plug 'kien/ctrlp.vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
@@ -54,7 +56,7 @@ Plug 'bling/vim-airline'
 
 " unclear utility
 Plug 'terryma/vim-multiple-cursors'
-Plug 'SirVer/ultisnips'
+"Plug SirVer/ultisnips'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -62,25 +64,22 @@ Plug 'lyuts/vim-rtags'
 
 " added for C/C++
 Plug 'cjuniet/clang-format.vim', {'for': ['c', 'cpp']}
-"Plug 'octol/vim-cpp-enhanced-highlight'
-"Plug 'stevearc/vim-arduino'
-
-" added for scip/lisp/racket
-Plug 'kien/rainbow_parentheses.vim', {'for': ['scheme', 'racket', 'lisp']}
 Plug 'sheerun/vim-polyglot'
-Plug 'scrooloose/syntastic', {'for': ['scheme', 'racket', 'lisp']}
-Plug 'jpalardy/vim-slime', {'for': ['scheme', 'racket', 'lisp']}
-Plug 'wlangstroth/vim-racket', {'for': ['scheme', 'racket', 'lisp']}
+Plug 'craigemery/vim-autotag'
 
-" added for yocto/bitbake
-Plug 'kergoth/vim-bitbake', {'for': 'bitbake'}
-
-" Tex
-Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
-Plug 'shime/vim-livedown'
-Plug 'lervag/vimtex', {'for': 'tex'}
+Plug 'ryanoasis/vim-devicons'
+Plug 'philrunninger/nerdtree-visual-selection'
+Plug 'scrooloose/nerdtree-project-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
+
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 
 " color scheme: molokai
 colorscheme monokai
@@ -119,9 +118,6 @@ nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <up> :3wincmd -<CR>
 nmap <silent> <down> :3wincmd +<CR>
 
-"nnoremap <silent> <Leader>gd :YcmCompleter Goto<CR>
-"nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
-
 nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <right> :3wincmd ><CR>
 
@@ -153,7 +149,7 @@ function! ToggleNetrw()
 endfunction
 
 " vim-airline: status bar
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 " ctrlp: file search with <C-p>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -162,118 +158,14 @@ let g:ctrlp_working_path_mode = 'ra'
 " Git Gutter
 highlight! link SignColumn LineNr
 
-" Vim Racket/Scheme
-autocmd bufread,bufnewfile *.lisp,*.scm,*.rkt,*.rktl setlocal equalprg=scmindent.rkt
-if has("autocmd")
-  au BufReadPost *.rkt,*.rktl set filetype=scheme
-endif
-" let g:syntastic_enable_racket_racket_checker=1
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" slimv for scheme interpreting
-let g:slime_target = "tmux"
-let g:slime_paste_file = "$HOME/.slime_paste"
-let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
-
-" Rainbow Parantheses
-"au VimEnter * RainbowParenthesesToggle
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
-
-let g:rbpt_colorpairs = [
-      \ ['brown',       'RoyalBlue3'],
-      \ ['Darkblue',    'SeaGreen3'],
-      \ ['darkgray',    'DarkOrchid3'],
-      \ ['darkgreen',   'firebrick3'],
-      \ ['darkcyan',    'RoyalBlue3'],
-      \ ['darkred',     'SeaGreen3'],
-      \ ['darkmagenta', 'DarkOrchid3'],
-      \ ['brown',       'firebrick3'],
-      \ ['gray',        'RoyalBlue3'],
-      \ ['black',       'SeaGreen3'],
-      \ ['darkmagenta', 'DarkOrchid3'],
-      \ ['Darkblue',    'firebrick3'],
-      \ ['darkgreen',   'RoyalBlue3'],
-      \ ['darkcyan',    'SeaGreen3'],
-      \ ['darkred',     'DarkOrchid3'],
-      \ ['red',         'firebrick3'],
-      \ ]
-let g:rbpt_max = 16
-let g:rbpt_loadcmd_toggle = 0
-
-" VIMTEX
-let g:tex_flavor = "latex"
-let g:vimtex_complete_enabled = 1
-let g:vimtex_compiler_method = 'latexmk'
-let g:vimtex_fold_enabled = 0
-let g:vimtex_view_method = 'skim'
-let g_vimtex_motion_enabled = 0
-let g:vimtex_compiler_latexmk = {
-      \        'backend'    : 'process',
-      \        'background' : 1,
-      \        'build_dir'  : 'build',
-      \        'callback'   : 1,
-      \        'continuous' : 1,
-      \        'executable' : 'latexmk',
-      \        'options'    : [
-      \           '-pdf',
-      \           '-verbose',
-      \           '-file-line-error',
-      \           '-interaction=nonstopmode',
-      \           ],
-      \       }
-if !exists('g:ycm_semantic_triggers')
- let g:ycm_semantic_triggers = {}
-endif
-let g:ycm_semantic_triggers.tex = [
-     \          're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-     \          're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-     \          're!\\hyperref\[[^]]*',
-     \          're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-     \          're!\\(include(only)?|input){[^}]*',
-     \          're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-     \          're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-     \          're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-     \          're!\\usepackage(\s*\[[^]]*\])?\s*\{[^}]*',
-     \          're!\\documentclass(\s*\[[^]]*\])?\s*\{[^}]*',
-     \          're!\\[A-Za-z]*',
-     \          ]
-
-" LIVE-TEX
-autocmd Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'open -a Preview'
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<F6>"
-let g:UltiSnipsJumpForwardTrigger="<F7>"
-let g:UltiSnipsJumpBackwardTrigger="<F5>"
-
-" " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
-
-" LIVEDOWN
-" should markdown preview get shown automatically upon opening markdown buffer
-let g:livedown_autorun = 1
-" should the browser window pop-up upon previewing
-let g:livedown_open = 1
-" the port on which Livedown server will run
-let g:livedown_port = 1337
-
 "autocmd Filetype tex        
 autocmd Filetype tex        nnoremap <Leader>= :LLPStartPreview<CR>
 autocmd Filetype markdown   nnoremap <Leader>= :LivedownPreview<CR>
-
-let g:Tex_BibtexFlavor = 'biber'
-"let g:Tex_CompileRule_pdf = 'pdflatex --synctex=-1 -src-specials -interaction=nonstopmode -file-line-error-style $*'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_MultipleCompileFormats='pdf'
-let g:Tex_CompileRule_pdf = 'mkdir -p build && pdflatex -output-directory=build -interaction=nonstopmode $* && cp *.bib build && cd build && bibtex %:r && cd .. && pdflatex -output-directory=build -interaction=nonstopmode $* && mv build/$*.pdf .'
 
 " AUTOFORMAT 
 let g:autoformat_autoindent = 0

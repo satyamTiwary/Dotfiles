@@ -12,6 +12,13 @@ export DOTS="$HOME/dotfiles"
 export SNIPS="$HOME/UltiSnips"
 export NOTES="$DOCSFOLDER/Notes"
 
+#if [ -f $HOME/.bash_env_local ]; then
+#  source ./.bash_env_local
+#else
+#  export DOCSFOLDER="$HOME/Documents"
+#fi
+
+# export PATH="/opt/bluespec/bin:$PATH"
 export PATH=~/anaconda3/bin:$PATH
 
-export PATH=:$PATH
+alias vi=nvim
