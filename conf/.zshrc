@@ -8,7 +8,7 @@ export ZSH="/Users/satyam/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="minimal"
+ZSH_THEME="nicoulaj"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,7 +71,7 @@ ZSH_THEME="minimal"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions zsh-z)
+plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions zsh-z vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,5 +108,10 @@ source ~/.zplug/init.zsh
 source ~/enhancd/init.sh
 
 export PATH=$PATH:~/.platformio/penv/bin
+export PATH=$PATH:/Applications/Racket\ v8.1/bin
 
 alias ctags="`brew --prefix`/bin/ctags"
+
+source ~/.zephyrrc
+
+alias vi=nvim
