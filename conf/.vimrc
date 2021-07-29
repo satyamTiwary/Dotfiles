@@ -23,7 +23,7 @@ set backspace=indent,eol,start
 
 set noswapfile
 set nobackup
-set undodir=/.vim/undorir
+set undodir=~/.vim/undorir
 set undofile
 set smartcase
 set incsearch
@@ -143,3 +143,4 @@ let g:autoformat_remove_trailing_spaces = 0
 let g:formatdef_my_custom_clang = '"clang-format -style=file"' 
 let g:formatters_cpp = ['my_custom_clang']
 
+map :tcr :0r ~/.vim/tcr.txt

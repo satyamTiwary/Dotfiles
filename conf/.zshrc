@@ -109,6 +109,7 @@ source ~/enhancd/init.sh
 
 export PATH=$PATH:~/.platformio/penv/bin
 export PATH=$PATH:/Applications/Racket\ v8.1/bin
+export PATH=$PATH:/usr/local/opt/llvm/bin/
 
 alias ctags="`brew --prefix`/bin/ctags"
 
