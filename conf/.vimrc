@@ -23,8 +23,6 @@ set backspace=indent,eol,start
 
 set noswapfile
 set nobackup
-set undodir=~/.vim/undorir
-set undofile
 set smartcase
 set incsearch
 set hlsearch

@@ -102,10 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-alias v=nvim
+alias v=nvim 
 
 # Source scripts
 source ~/env.sh
+source ~/.zshrc_local
 source ~/.zplug/init.zsh
 source ~/enhancd/init.sh
 source ~/.zephyrrc
