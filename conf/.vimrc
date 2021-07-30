@@ -60,9 +60,6 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
 call plug#end()
 
-set encoding=utf8
-set guifont=DroidSansMono\ Nerd\ Font:h11
-
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 

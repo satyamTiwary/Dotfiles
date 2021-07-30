@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 #
 
 alias v=nvim 
+alias vi=nvim 
+alias vim=nvim 
 
 # Source scripts
 source ~/env.sh
