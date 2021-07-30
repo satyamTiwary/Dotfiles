@@ -75,19 +75,6 @@ set background=dark
 " Leader
 let mapleader=" "
 
-" netrw configs
-let g:netrw_browse_split=4
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:ctrlp_use_caching=0
-let g:netrw_winsize=25
-
-"augroup nerdtree_open
-"    autocmd!
-"    autocmd VimEnter * NERDTree | wincmd p
-"augroup END
-
-
 " Leader Shortcuts
 " The best part.
 nnoremap <leader>h :wincmd h<CR>
@@ -102,7 +89,6 @@ nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <up> :3wincmd -<CR>
 nmap <silent> <down> :3wincmd +<CR>
 
-nnoremap <F2> :UndotreeToggle<CR>
 nnoremap <F1> :w<CR>
 
 nnoremap <Leader>. :bnext<CR>
