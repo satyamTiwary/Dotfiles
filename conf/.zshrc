@@ -112,6 +112,7 @@ source ~/.zshrc_local
 source ~/.zplug/init.zsh
 source ~/enhancd/init.sh
 source ~/.zephyrrc
+source $ZSH/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # zplug
 zplug "b4b4r07/enhancd", use:init.sh
