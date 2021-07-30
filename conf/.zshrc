@@ -71,7 +71,7 @@ ZSH_THEME="nicoulaj"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions zsh-z vi-mode)
+plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions zsh-z vi-mode history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,16 +102,22 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+alias v=nvim
+
+# Source scripts
 source ~/env.sh
+source ~/.zplug/init.zsh
 source ~/enhancd/init.sh
-
-export PATH=$PATH:~/.platformio/penv/bin
-export PATH=$PATH:/usr/local/opt/llvm/bin/
-
 source ~/.zephyrrc
 
-alias vi=nvim
+# zplug
+zplug "b4b4r07/enhancd", use:init.sh
+zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
+zplug "zsh-users/zsh-history-substring-search"
 
+# PATH Appends
+export PATH=$PATH:~/.platformio/penv/bin
+export PATH=$PATH:/usr/local/opt/llvm/bin/
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
