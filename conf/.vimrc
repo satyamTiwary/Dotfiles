@@ -38,7 +38,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 " Vim Plug Installations
 call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'cjuniet/clang-format.vim', {'for': ['c', 'cpp']}
@@ -48,7 +47,7 @@ Plug 'soramugi/auto-ctags.vim'
 Plug 'caenrique/nvim-toggle-terminal'
 Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'lifepillar/gruvbox8'
 

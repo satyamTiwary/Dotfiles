@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/satyam/.oh-my-zsh"
+export ZSH="/home/tcr/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -104,15 +104,19 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/env.sh
 
-source ~/.zplug/init.zsh
+# source ~/.zplug/init.zsh
 source ~/enhancd/init.sh
 
 export PATH=$PATH:~/.platformio/penv/bin
-export PATH=$PATH:/Applications/Racket\ v8.1/bin
+# export PATH=$PATH:/Applications/Racket\ v8.1/bin
 export PATH=$PATH:/usr/local/opt/llvm/bin/
 
-alias ctags="`brew --prefix`/bin/ctags"
+# alias ctags="`brew --prefix`/bin/ctags"
 
 source ~/.zephyrrc
 
 alias vi=nvim
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
