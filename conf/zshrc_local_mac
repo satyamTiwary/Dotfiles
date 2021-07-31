@@ -1,0 +1,10 @@
+# ZSH
+export ZSH="/Users/satyam/.oh-my-zsh"
+
+# ctags
+ctags=/usr/local/bin/ctags
+
+# racket
+export PATH=$PATH:/Applications/Racket\ v8.1/bin
+
+[ -f "/Users/satyam/.ghcup/env" ] && source "/Users/satyam/.ghcup/env" # ghcup-env

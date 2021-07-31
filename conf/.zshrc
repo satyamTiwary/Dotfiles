@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/tcr/.oh-my-zsh"
+source ~/.zshrc_local
+# export ZSH="/home/tcr/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,7 +72,7 @@ ZSH_THEME="nicoulaj"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions zsh-z vi-mode history-substring-search)
+plugins=(git colored-man-pages colorize pip python brew osx zsh-syntax-highlighting zsh-autosuggestions zsh-z vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,16 +109,15 @@ alias vim=nvim
 
 # Source scripts
 source ~/env.sh
-source ~/.zshrc_local
 source ~/.zplug/init.zsh
 source ~/enhancd/init.sh
 source ~/.zephyrrc
-source $ZSH/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# source $ZSH/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # zplug
-zplug "b4b4r07/enhancd", use:init.sh
-zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
-zplug "zsh-users/zsh-history-substring-search"
+# zplug "b4b4r07/enhancd", use:init.sh
+# zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
+# zplug "zsh-users/zsh-history-substring-search"
 
 # PATH Appends
 export PATH=$PATH:~/.platformio/penv/bin
