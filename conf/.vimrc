@@ -10,6 +10,7 @@ set encoding=utf8
 set spell spelllang=en_us
 
 set number
+set cursorline
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -47,7 +48,10 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
-Plug 'lifepillar/gruvbox8'
+
+"Plug 'lifepillar/gruvbox8'
+"Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'tomasiser/vim-code-dark'
 
 Plug '9mm/vim-closer'
 Plug 'tweekmonster/startuptime.vim'
@@ -69,8 +73,13 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 "colorscheme material
-colo gruvbox8
-set background=dark
+"colorscheme gruvbox8
+"colorscheme onehalfdark
+colorscheme codedark
+
+let g:airline_theme='codedark'
+
+"set background=dark
 
 " Leader
 let mapleader=" "
