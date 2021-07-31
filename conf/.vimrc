@@ -89,17 +89,19 @@ nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <up> :3wincmd -<CR>
 nmap <silent> <down> :3wincmd +<CR>
 
-nnoremap <F1> :w<CR>
-nmap <F2> :TagbarToggle<CR>
+" nnoremap <F1> :w<CR>
+nmap <F1> :TagbarToggle<CR>
 
 nnoremap <Leader>. :bnext<CR>
 nnoremap <Leader>, :bprev<CR>
+nnoremap <Leader>x :bd<CR>
 
 nnoremap <silent> <C-z> :ToggleTerminal<Enter>
 tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
 
 nnoremap <ESC><ESC> :ToggleTerminal<Enter>
 tnoremap <ESC><ESC> <C-\><C-n>:ToggleTerminal<Enter>
+
 
 " File type dependent key bindings
 autocmd Filetype racket     nnoremap <C-a> :term racket % <Enter>
@@ -127,10 +129,11 @@ let g:ctrlp_working_path_mode = 'ra'
 " Git Gutter
 highlight! link SignColumn LineNr
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_remove_include_errors = 1
 
 "autocmd Filetype tex        
 "autocmd Filetype tex        nnoremap <Leader>= :LLPStartPreview<CR>
