@@ -1,0 +1,6 @@
+ctags=/usr/local/bin/ctags
+alias user=/mnt/c/Users/satya/
+
+alias racket=Racket.exe
+alias raco=raco.exe
+
