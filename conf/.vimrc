@@ -58,6 +58,11 @@ Plug 'jremmen/vim-ripgrep'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
+Plug 'neomake/neomake'
+Plug 'zyedidia/literate.vim'
+
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 let g:ctrlp_map = '<c-p>'
@@ -84,10 +89,12 @@ nmap <silent> <right> :3wincmd ><CR>
 nmap <silent> <up> :3wincmd -<CR>
 nmap <silent> <down> :3wincmd +<CR>
 
-nnoremap <F1> :w<CR>
+" nnoremap <F1> :w<CR>
+nmap <F1> :TagbarToggle<CR>
 
 nnoremap <Leader>. :bnext<CR>
 nnoremap <Leader>, :bprev<CR>
+nnoremap <Leader>x :bd<CR>
 
 nnoremap <silent> <C-z> :ToggleTerminal<Enter>
 tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
@@ -95,10 +102,16 @@ tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
 nnoremap <ESC><ESC> :ToggleTerminal<Enter>
 tnoremap <ESC><ESC> <C-\><C-n>:ToggleTerminal<Enter>
 
+
 " File type dependent key bindings
 autocmd Filetype racket     nnoremap <C-a> :term racket % <Enter>
 autocmd Filetype haskell    nnoremap <C-a> :term stack run . <Enter>
 " ---
+
+" Automatically execute for specific filetypes
+au BufReadPost,BufNewFile *.lit :e
+" ---
+
 
 :nnoremap <leader>m :CocCommand explorer<CR>
 
@@ -116,10 +129,11 @@ let g:ctrlp_working_path_mode = 'ra'
 " Git Gutter
 highlight! link SignColumn LineNr
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_remove_include_errors = 1
 
 "autocmd Filetype tex        
 "autocmd Filetype tex        nnoremap <Leader>= :LLPStartPreview<CR>
@@ -140,23 +154,23 @@ map :tcr :0r ~/.vim/tcr.txt
 " https://github.com/romgrk/barbar.nvim#install
 
 " Move to previous/next
-nnoremap <silent>    <A-,> :BufferPrevious<CR>
-nnoremap <silent>    <A-.> :BufferNext<CR>
+" nnoremap <silent>    <C-,> :BufferPrevious<CR>
+" nnoremap <silent>    <C-.> :BufferNext<CR>
 " Re-order to previous/next
-nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
-nnoremap <silent>    <A->> :BufferMoveNext<CR>
+" nnoremap <silent>    <C-<> :BufferMovePrevious<CR>
+" nnoremap <silent>    <C->> :BufferMoveNext<CR>
 " Goto buffer in position...
-nnoremap <silent>    <A-1> :BufferGoto 1<CR>
-nnoremap <silent>    <A-2> :BufferGoto 2<CR>
-nnoremap <silent>    <A-3> :BufferGoto 3<CR>
-nnoremap <silent>    <A-4> :BufferGoto 4<CR>
-nnoremap <silent>    <A-5> :BufferGoto 5<CR>
-nnoremap <silent>    <A-6> :BufferGoto 6<CR>
-nnoremap <silent>    <A-7> :BufferGoto 7<CR>
-nnoremap <silent>    <A-8> :BufferGoto 8<CR>
-nnoremap <silent>    <A-9> :BufferLast<CR>
+nnoremap <silent>    <leader>1 :BufferGoto 1<CR>
+nnoremap <silent>    <leader>2 :BufferGoto 2<CR>
+nnoremap <silent>    <leader>3 :BufferGoto 3<CR>
+nnoremap <silent>    <leader>4 :BufferGoto 4<CR>
+nnoremap <silent>    <leader>5 :BufferGoto 5<CR>
+nnoremap <silent>    <leader>6 :BufferGoto 6<CR>
+nnoremap <silent>    <leader>7 :BufferGoto 7<CR>
+nnoremap <silent>    <leader>8 :BufferGoto 8<CR>
+nnoremap <silent>    <leader>9 :BufferLast<CR>
 " Close buffer
-nnoremap <silent>    <A-c> :BufferClose<CR>
+nnoremap <silent>    <C-c> :BufferClose<CR>
 " Wipeout buffer
 "                          :BufferWipeout<CR>
 " Close commands
@@ -180,3 +194,8 @@ nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 nnoremap <silent> <leader>n :tnext<CR>
 nnoremap <silent> <leader>b :tprevious<CR>
 nnoremap <silent> <leader>c :tselect<CR>
+
+
+let g:literate_find_codeblock = '<C-]>'
+let g:literate_open_code = '<leader>c'
+let g:literate_open_html = '<F5>'
