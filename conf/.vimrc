@@ -58,6 +58,11 @@ Plug 'jremmen/vim-ripgrep'
 
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
+Plug 'neomake/neomake'
+Plug 'zyedidia/literate.vim'
+
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 let g:ctrlp_map = '<c-p>'
@@ -85,6 +90,7 @@ nmap <silent> <up> :3wincmd -<CR>
 nmap <silent> <down> :3wincmd +<CR>
 
 nnoremap <F1> :w<CR>
+nmap <F2> :TagbarToggle<CR>
 
 nnoremap <Leader>. :bnext<CR>
 nnoremap <Leader>, :bprev<CR>
@@ -99,6 +105,11 @@ tnoremap <ESC><ESC> <C-\><C-n>:ToggleTerminal<Enter>
 autocmd Filetype racket     nnoremap <C-a> :term racket % <Enter>
 autocmd Filetype haskell    nnoremap <C-a> :term stack run . <Enter>
 " ---
+
+" Automatically execute for specific filetypes
+au BufReadPost,BufNewFile *.lit :e
+" ---
+
 
 :nnoremap <leader>m :CocCommand explorer<CR>
 
@@ -180,3 +191,8 @@ nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 nnoremap <silent> <leader>n :tnext<CR>
 nnoremap <silent> <leader>b :tprevious<CR>
 nnoremap <silent> <leader>c :tselect<CR>
+
+
+let g:literate_find_codeblock = '<C-]>'
+let g:literate_open_code = '<leader>c'
+let g:literate_open_html = '<F5>'

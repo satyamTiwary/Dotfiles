@@ -4,3 +4,10 @@
 --exclude=node_modules/*
 --exclude=db/*
 --exclude=log/*
+
+--langdef=literate
+--langmap=literate:+.lit
+--regex-literate=/^@s[ \t]+(.+)/\1/s,section/i
+--regex-literate=/^---[ \t](.+)/\1/c,code/i
+--regex-literate=/@{(.*)}/\1/i,includes/i
+
