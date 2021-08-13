@@ -1,0 +1,40 @@
+---
+BasedOnStyle: LLVM
+IndentWidth: 4
+---
+Language: Cpp
+# Force pointers to the type for C++.
+Standard: c++20
+
+DerivePointerAlignment: false
+
+AccessModifierOffset: -2
+
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+AlignConsecutiveMacros: true
+AlignTrailingComments: true
+AlignOperands: true
+AllowShortIfStatementsOnASingleLine: Always
+AllowShortFunctionsOnASingleLine: All
+AllowShortCaseLabelsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Always
+AllowShortLambdasOnASingleLine: All
+
+ConstructorInitializerAllOnOneLineOrOnePerLine: false 
+Cpp11BracedListStyle: false
+IncludeBlocks: Regroup
+IndentPPDirectives: BeforeHash
+PointerAlignment: Left
+
+SpaceAfterLogicalNot: true
+SpaceAfterCStyleCast: true
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: NonEmptyParentheses
+
+FixNamespaceComments: true
+SpacesBeforeTrailingComments: 4
+---
