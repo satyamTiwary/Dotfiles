@@ -111,19 +111,13 @@ tnoremap <silent> <C-z> <C-\><C-n>:ToggleTerminal<Enter>
 nnoremap <ESC><ESC> :ToggleTerminal<Enter>
 tnoremap <ESC><ESC> <C-\><C-n>:ToggleTerminal<Enter>
 
-<<<<<<< HEAD
-=======
 nnoremap <leader>r :!make<Enter>
->>>>>>> 14c3de8c5455d28a887751724462c681c5e41820
 
 " File type dependent key bindings
 autocmd Filetype racket     nnoremap <C-a> :term racket % <Enter>
 autocmd Filetype haskell    nnoremap <C-a> :term stack run . <Enter>
-<<<<<<< HEAD
-=======
 autocmd Filetype c          nnoremap <C-a> :term gcc % && ./a.out <Enter>
 autocmd Filetype lit        nnoremap <C-a> :!lit % <Enter>
->>>>>>> 14c3de8c5455d28a887751724462c681c5e41820
 " ---
 
 " Automatically execute for specific filetypes
@@ -205,11 +199,6 @@ nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
 " :BarbarEnable - enables barbar (enabled by default)
 " :BarbarDisable - very bad command, should never be used
 " ------------
-<<<<<<< HEAD
-"
-=======
->>>>>>> 14c3de8c5455d28a887751724462c681c5e41820
-
 
 " Ctags Helpers
 nnoremap <silent> <leader>n :tnext<CR>
