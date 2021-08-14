@@ -64,107 +64,24 @@
 ;;(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 
 ;; Custom settings
-(setq
- ;; Setup documents folder as the base directory conatining all the projects
+(setq ;; Setup documents folder as the base directory conatining all the projects
  projectile-project-search-path `("~/Documents/"))
 
-(use-package treemacs
-  :ensure t
-
-
-;;:defer t
-  :init
-  (with-eval-after-load 'winum
-    (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
-  :config
-  (progn
-    (setq treemacs-collapse-dirs                 (if treemacs-python-executable 3 0)
-          treemacs-deferred-git-apply-delay      0.5
-          treemacs-directory-name-transformer    #'identity
-          treemacs-display-in-side-window        t
-          treemacs-eldoc-display                 t
-          treemacs-file-event-delay              5000
-          treemacs-file-extension-regex          treemacs-last-period-regex-value
-          treemacs-file-follow-delay             0.2
-          treemacs-file-name-transformer         #'identity
-          treemacs-follow-after-init             t
-          treemacs-expand-after-init             t
-          treemacs-git-command-pipe              ""
-          treemacs-goto-tag-strategy             'refetch-index
-          treemacs-indentation                   2
-          treemacs-indentation-string            " "
-          treemacs-is-never-other-window         nil
-          treemacs-max-git-entries               5000
-          treemacs-missing-project-action        'ask
-          treemacs-move-forward-on-expand        nil
-          treemacs-no-png-images                 nil
-          treemacs-no-delete-other-windows       t
-          treemacs-project-follow-cleanup        nil
-          treemacs-persist-file                  (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
-          treemacs-position                      'left
-          treemacs-read-string-input             'from-child-frame
-          treemacs-recenter-distance             0.1
-          treemacs-recenter-after-file-follow    nil
-          treemacs-recenter-after-tag-follow     nil
-          treemacs-recenter-after-project-jump   'always
-          treemacs-recenter-after-project-expand 'on-distance
-          treemacs-litter-directories            '("/node_modules" "/.venv" "/.cask" "/.git")
-          treemacs-show-cursor                   nil
-          treemacs-show-hidden-files             t
-          treemacs-silent-filewatch              nil
-          treemacs-silent-refresh                nil
-          treemacs-sorting                       'alphabetic-asc
-          treemacs-space-between-root-nodes      t
-          treemacs-tag-follow-cleanup            t
-          treemacs-tag-follow-delay              1.5
-          treemacs-user-mode-line-format         nil
-          treemacs-user-header-line-format       nil
-          treemacs-width                         35
-          treemacs-width-is-initially-locked     t
-          treemacs-workspace-switch-cleanup      nil)
-
-    ;; The default width and height of the icons is 22 pixels. If you are
-    ;; using a Hi-DPI display, uncomment this to double the icon size.
-    ;;(treemacs-resize-icons 44)
-
-    (treemacs-follow-mode t)
-    (treemacs-filewatch-mode t)
-    (treemacs-fringe-indicator-mode 'always)
-    (pcase (cons (not (null (executable-find "git")))
-                 (not (null treemacs-python-executable)))
-      (`(t . t)
-       (treemacs-git-mode 'deferred))
-      (`(t . _)
-       (treemacs-git-mode 'simple))))
-  :bind
-  (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ("C-x t 1"   . treemacs-delete-other-windows)
-        ("C-x t t"   . treemacs)
-        ("C-x t B"   . treemacs-bookmark)
-        ("C-x t C-t" . treemacs-find-file)
-        ("C-x t M-t" . treemacs-find-tag)))
-
 (use-package treemacs-evil
-  :after (treemacs evil)
-  :ensure t)
+  :after (treemacs evil))
 
 (use-package treemacs-projectile
-  :after (treemacs projectile)
-  :ensure t)
+  :after (treemacs projectile))
 
-;;(use-package treemacs-icons-dired
-  ;;:after (treemacs dired)
-  ;;:ensure t
-  ;;:config (treemacs-icons-dired-mode))
+(use-package treemacs-icons-dired
+  :after (treemacs dired)
+  :config (treemacs-icons-dired-mode))
 
 (use-package treemacs-magit
-  :after (treemacs magit)
-  );;:ensure t)
+  :after (treemacs magit))
 
 (use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
   :after (treemacs persp-mode) ;;or perspective vs. persp-mode
-  :ensure t
   :config (treemacs-set-scope-type 'Perspectives))
 
 
@@ -174,32 +91,131 @@
 
 ;; ;;(autoload 'flycheck-inline-mode "~/.emacs.d/flycheck-inline/flycheck-inline.el")
 
-;; ;; == Move windows ==
-;; ;; move around in split windows using cmd+arrow keys
-;; (global-set-key [s-left] 'windmove-left)
-;; (global-set-key [s-right] 'windmove-right)
-;; (global-set-key [s-up] 'windmove-up)
-;; (global-set-key [s-down] 'windmove-down)
+;; == Move windows ==
+;; move around in split windows using cmd+arrow keys
+(global-set-key [s-left] 'windmove-left)
+(global-set-key [s-right] 'windmove-right)
+(global-set-key [s-up] 'windmove-up)
+(global-set-key [s-down] 'windmove-down)
 
-;; ;; move line up and down
-;; (global-set-key (kbd "M-<up>") 'move-text-up)
-;; (global-set-key (kbd "M-<down>") 'move-text-down)
+;; move line up and down
+(global-set-key (kbd "M-<up>") 'move-text-up)
+(global-set-key (kbd "M-<down>") 'move-text-down)
 
-;; ;; works for commenting region as well
-;; (global-set-key (kbd "C-;") 'comment-line)
+;; works for commenting region as well
+(global-set-key (kbd "C-;") 'comment-line)
 
-;; (display-battery-mode 1)
+(display-battery-mode 1)
 
-;; (global-hl-line-mode 1)
+(global-hl-line-mode 1)
 
-;; (winner-mode 1)
+(winner-mode 1)
 
-;; ;;(setq golden-ratio-adjust-factor 1.04)
-;; ;;(golden-ratio-mode 1)
+;;(setq golden-ratio-adjust-factor 1.04)
+;;(golden-ratio-mode 1)
 
-;; (global-prettify-symbols-mode 1)
+(global-prettify-symbols-mode 1)
 
 
 (setq cmake-ide-flags-c "-I/usr/local/include -I/usr/include -I/Users/satyam/zephyrproject")
 (require 'rtags) ;; optional, must have rtags installed
 ;;(cmake-ide-setup)
+
+
+;;
+;; https://github.com/haditim/.doom.d/blob/master/config.el
+;;
+
+;; Look and feel
+
+;; ** Start maximised (cross-platf)
+(add-hook 'window-setup-hook 'toggle-frame-maximized t)
+
+;; ** Don't ask to quit
+(setq confirm-kill-emacs nil)
+
+;; ** Modeline adjustments
+(setq doom-modeline-major-mode-icon t)
+
+;; ** lsp always show breadcrumb
+(setq lsp-headerline-breadcrumb-enable t)
+
+;; ** doom-gruvbox for the theme
+;;(setq
+ ;;doom-theme 'doom-gruvbox)
+
+;; ** error in treemacs icons
+;;(doom-themes-treemacs-config)
+;;(after! treemacs
+  ;;(treemacs-load-theme "doom-colors"))
+
+;; ** Outshine mini mode for all major modes
+;;(add-hook 'prog-mode-hook 'outshine-mode)
+
+;; ** Font
+;; (setq doom-font (font-spec :family "Dejavu Sans Mono" :size 15))
+(setq doom-font (font-spec :family "SF Mono Regular" :size 15))
+
+;; * Keybinds
+;; ;; ** Docker-compose
+;; (map! :leader
+;;       (:desc "Docker"  "d" #'docker)
+;;       )
+
+;; ** rgrep in project
+(map! :leader
+      (:prefix-map ("s" . "search")
+       :desc "rgrep in project" "r" #'rgrep))
+
+;; ** Ctrl+vim navigation keys in the evil edit mode
+(map! :i "C-l" #'forward-char
+      :i "C-h" #'backward-char
+      :i "C-k" #'previous-line
+      :i "C-j" #'next-line
+      :i "C-p" #'previous-line
+      :i "C-n" #'next-line)
+
+;; ** jump to paranthesis with tab
+(map! :n [tab] 'evil-jump-item)
+
+;; ** expand region
+(map! :leader
+      (:desc "Expand region"  "v" #'er/expand-region))
+
+
+;; * Misc
+;; ** rgrep ignore some folders
+(eval-after-load 'grep
+  '(progn
+     (add-to-list 'grep-find-ignored-directories "tmp")
+     (add-to-list 'grep-find-ignored-directories "node_modules")
+     (add-to-list 'grep-find-ignored-directories ".bundle")
+     (add-to-list 'grep-find-ignored-directories "auto")
+     (add-to-list 'grep-find-ignored-directories "env")
+     (add-to-list 'grep-find-ignored-directories "venv")
+     (add-to-list 'grep-find-ignored-directories ".pytest_cache")
+     (add-to-list 'grep-find-ignored-directories "elpa")))
+(setq wgrep-enable-key (kbd "C-c C-c"))
+(add-hook 'grep-mode-hook (lambda () (toggle-truncate-lines 1)))
+
+;; ** dired hide files toggle on M-h
+(setq my-dired-ls-switches "-alh --ignore=.* --ignore=\\#* --ignore=*~")
+
+(setq my-dired-switch 1)
+
+;; (add-hook 'dired-mode-hook
+;;         (lambda ()
+;;         "Set the right mode for new dired buffers."
+;;         (when (= my-dired-switch 1)
+;;         (dired-sort-other my-dired-ls-switches))))
+
+;; (add-hook 'dired-mode-hook
+;;         (lambda ()
+;;         (define-key dired-mode-map (kbd "M-h")
+;;         (lambda ()
+;;                 "Toggle between hide and show."
+;;                 (interactive)
+;;                 (setq my-dired-switch (- my-dired-switch))
+;;                 (if (= my-dired-switch 1)
+;;                 (dired-sort-other my-dired-ls-switches)
+;;                 (dired-sort-other "-alh"))))))
