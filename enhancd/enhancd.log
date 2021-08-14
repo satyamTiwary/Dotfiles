@@ -1,3 +1,15 @@
+/home/tcr/Dotfiles/colors
+/home
+/home/tcr/Dotfiles/Fonts
+/home/tcr/Dotfiles/vim
+/home/tcr/Dotfiles/scripts
+/home/tcr/Dotfiles/conf
+/home/tcr/Dotfiles/assets
+/home/tcr/Dotfiles/tmuxinator
+/home/tcr/Dotfiles/enhancd
+/home/tcr/Dotfiles/emacs.d
+/home/tcr/Dotfiles/oh-my-zsh
+/home/tcr/Dotfiles/UltiSnips
 /Users/satyam/Dotfiles/tmuxinator
 /Users/satyam/Dotfiles/UltiSnips
 /Users/satyam/Dotfiles/scripts
@@ -715,6 +727,9 @@
 /Users/satyam/.doom.d
 /Users/satyam/Documents/C-Things/zephyrproject/ZephyrPlayground/tmp100
 /Users/satyam/dotfiles
-/Users/satyam/Dotfiles
 /Users/satyam
 /Users/satyam/Dotfiles
+/home/tcr/Dotfiles
+/home/tcr/Dotfiles/doom.d
+/home/tcr
+/home/tcr/Dotfiles

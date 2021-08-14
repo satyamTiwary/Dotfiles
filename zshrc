@@ -113,6 +113,7 @@ source ~/.zplug/init.zsh
 source ~/enhancd/init.sh
 source ~/.zephyrrc
 # source $ZSH/custom/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zshrc_local
 
 # zplug
 # zplug "b4b4r07/enhancd", use:init.sh
@@ -129,3 +130,4 @@ export NVM_DIR="$HOME/.nvm"
 his () {
   history | cut -c 8- | rg $1 | sort | uniq
 }
+
