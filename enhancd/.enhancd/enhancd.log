@@ -1,0 +1,168 @@
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/Subsystems/TemperatureControl
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/Subsystems/TemperatureControl/ConvectivePCR/DimensionlessNumbers
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/Base
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/Docs
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/Drivers
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/GenotyperToolbox
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/resources
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/slprj
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/Subsystems
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/System
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/Tools
+/mnt/c/Users/satya/MATLAB/Projects
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0/PC GUI/locales
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0/PC GUI/msp430-tools
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0/PC GUI/node_modules
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0/PC GUI/public
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0/PC GUI/server
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0/EVM Driver
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0/EVM Firmware
+/mnt/c/$Recycle.Bin
+/mnt/c/$WinREAgent
+/mnt/c/Config.Msi
+/mnt/c/cygwin64
+/mnt/c/installs
+/mnt/c/Intel
+/mnt/c/IntelOptaneData
+/mnt/c/Keil
+/mnt/c/matlab 2021
+/mnt/c/OligoResources
+/mnt/c/OneDriveTemp
+/mnt/c/PerfLogs
+/mnt/c/Program Files (x86)
+/mnt/c/ProgramData
+/mnt/c/Qt
+/mnt/c/Recovery
+/mnt/c/SQL2019
+/mnt/c/System Volume Information
+/mnt/c/temp
+/mnt/c/ti
+/mnt/c/Windows
+/mnt/c/Users/satya/Downloads/FiraCode
+/mnt/c/Users/satya/Downloads/MathWorks
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/minimal_build/src
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/adc
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/add_func
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/blinky
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/drivers
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/mpu6050
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/multitask_example
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/multi_tasking
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/my_blink
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/printk
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/tmp100
+/mnt/c/Users/satya/zephyrproject/bootloader
+/mnt/c/Users/satya/zephyrproject/modules
+/mnt/c/Users/satya/zephyrproject/tools
+/mnt/c/Users/satya/zephyrproject/zephyr
+/mnt/c/Program Files
+/mnt/c/Program Files/Racket/collects
+/mnt/c/Program Files/Racket/doc
+/mnt/c/Program Files/Racket/etc
+/mnt/c/Program Files/Racket/include
+/mnt/c/Program Files/Racket/lib
+/mnt/c/Program Files/Racket/share
+/home/tcr/.oh-my-zsh/custom
+/home/tcr/.oh-my-zsh/custom/plugins/example
+/home/tcr/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+/home/tcr/.oh-my-zsh/custom/plugins/zsh-z
+/home/tcr/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+/home/tcr/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+/home/tcr/.oh-my-zsh
+/home/tcr/.oh-my-zsh/plugins
+/home/tcr/Cpp-Things/Microfabricator-Firmware
+/mnt/c/Users/satya/Documents/Adobe
+/mnt/c/Users/satya/Documents/Arduino
+/mnt/c/Users/satya/Documents/ArduinoData
+/mnt/c/Users/satya/Documents/Atmel Studio
+/mnt/c/Users/satya/Documents/Business-Things
+/mnt/c/Users/satya/Documents/C-Things
+/mnt/c/Users/satya/Documents/CAD-Things
+/mnt/c/Users/satya/Documents/Cpp-Things
+/mnt/c/Users/satya/Documents/Digital Viewer
+/mnt/c/Users/satya/Documents/GC-SDK
+/mnt/c/Users/satya/Documents/GC-UI
+/mnt/c/Users/satya/Documents/Go-Things
+/mnt/c/Users/satya/Documents/JS-Things
+/mnt/c/Users/satya/Documents/LabVIEW Data
+/mnt/c/Users/satya/Documents/MATLAB
+/mnt/c/Users/satya/Documents/MBE-Things
+/mnt/c/Users/satya/Documents/Microchip Studio
+/mnt/c/Users/satya/Documents/NoSQLBooster
+/mnt/c/Users/satya/Documents/Notes
+/mnt/c/Users/satya/Documents/PCB-Things
+/mnt/c/Users/satya/Documents/Polyspace_Workspace
+/mnt/c/Users/satya/Documents/PSoC Creator
+/mnt/c/Users/satya/Documents/Python-Things
+/mnt/c/Users/satya/Documents/Qt-Things
+/mnt/c/Users/satya/Documents/ReferenceProjects
+/mnt/c/Users/satya/Documents/SOLIDWORKS Downloads
+/mnt/c/Users/satya/Documents/SOLIDWORKS Visual Studio Tools for Applications
+/mnt/c/Users/satya/Documents/SOLIDWORKSComposer
+/mnt/c/Users/satya/Documents/SW Log Files
+/mnt/c/Users/satya/Documents/tcr-github-backup
+/mnt/c/Users/satya/Documents/VI-Things
+/mnt/c/Users/satya/Documents/Visual Studio 2005
+/mnt/c/Users/satya/Documents/Visual Studio 2015
+/mnt/c/Users/satya/Documents/Visual Studio 2019
+/mnt/c/Users/satya/Documents/VSC-Things
+/mnt/c/Users/satya/Documents/WindowsPowerShell
+/mnt
+/mnt/c/Users
+/mnt/c/Users/satya/3D Objects
+/mnt/c/Users/satya/AppData
+/mnt/c/Users/satya/Contacts
+/mnt/c/Users/satya/Creative Cloud Files
+/mnt/c/Users/satya/Desktop
+/mnt/c/Users/satya/Favorites
+/mnt/c/Users/satya/github-backup
+/mnt/c/Users/satya/go
+/mnt/c/Users/satya/InstallAnywhere
+/mnt/c/Users/satya/IntelGraphicsProfiles
+/mnt/c/Users/satya/Links
+/mnt/c/Users/satya/Music
+/mnt/c/Users/satya/ncs
+/mnt/c/Users/satya/Nordic
+/mnt/c/Users/satya/OneDrive
+/mnt/c/Users/satya/Pictures
+/mnt/c/Users/satya/Saved Games
+/mnt/c/Users/satya/Searches
+/mnt/c/Users/satya/source
+/mnt/c/Users/satya/Videos
+/home/tcr/dotfiles/Fonts
+/home/tcr/dotfiles/scripts
+/home/tcr/dotfiles/conf
+/home/tcr/dotfiles/assets
+/home/tcr/dotfiles/tmuxinator
+/home/tcr/dotfiles/UltiSnips
+/
+/home
+/home/tcr/VSC-Things
+/home/tcr/temp
+/home/tcr/enhancd
+/home/tcr/bin
+/mnt/c/Users/satya
+/mnt/c/Users/satya/Documents
+/home/tcr/Cpp-Things
+/home/tcr/.oh-my-zsh/plugins/history-substring-search
+/home/tcr/.oh-my-zsh/custom/plugins
+/mnt/c/Program Files/Racket
+/home/tcr/Haskell-Things
+/home/tcr/Scheme-Things
+/mnt/c/Users/satya/zephyrproject
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground
+/mnt/c/Users/satya/zephyrproject/ZephyrPlayground/minimal_build
+/mnt/c/Users/satya/Downloads
+/home/tcr/C-Things
+/home/tcr/C-Things/ZephyrInSimplePeices
+/mnt/c
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0
+/mnt/c/ti/Sensing Solutions EVM GUI-1.10.0/PC GUI
+/home/tcr/C-Things/ZephyrInSimplePieces
+/home/tcr/dotfiles
+/home/tcr/C-Things/ZephyrInSimplePieces/_book
+/mnt/c/Users/satya/MATLAB
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels
+/mnt/c/Users/satya/MATLAB/Projects/GenotyperModels/Subsystems/TemperatureControl/ConvectivePCR
+/home/tcr
+/home/tcr/dotfiles
