@@ -65,14 +65,14 @@
 
 ;; Custom settings
 (setq
- ;;mac-command-modifier 'meta
  ;; Setup documents folder as the base directory conatining all the projects
- projectile-project-search-path `("~/Documents/")
- )
+ projectile-project-search-path `("~/Documents/"))
 
 (use-package treemacs
   :ensure t
-  :defer t
+
+
+;;:defer t
   :init
   (with-eval-after-load 'winum
     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
@@ -108,7 +108,7 @@
           treemacs-recenter-after-tag-follow     nil
           treemacs-recenter-after-project-jump   'always
           treemacs-recenter-after-project-expand 'on-distance
-          treemacs-litter-directories            '("/node_modules" "/.venv" "/.cask")
+          treemacs-litter-directories            '("/node_modules" "/.venv" "/.cask" "/.git")
           treemacs-show-cursor                   nil
           treemacs-show-hidden-files             t
           treemacs-silent-filewatch              nil
@@ -160,12 +160,12 @@
 
 (use-package treemacs-magit
   :after (treemacs magit)
-  :ensure t)
+  );;:ensure t)
 
-;; (use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
-;;   :after (treemacs persp-mode) ;;or perspective vs. persp-mode
-;;   :ensure t
-;;   :config (treemacs-set-scope-type 'Perspectives))
+(use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
+  :after (treemacs persp-mode) ;;or perspective vs. persp-mode
+  :ensure t
+  :config (treemacs-set-scope-type 'Perspectives))
 
 
 ;; ;;
@@ -200,3 +200,6 @@
 ;; (global-prettify-symbols-mode 1)
 
 
+(setq cmake-ide-flags-c "-I/usr/local/include -I/usr/include -I/Users/satyam/zephyrproject")
+(require 'rtags) ;; optional, must have rtags installed
+;;(cmake-ide-setup)
