@@ -106,6 +106,7 @@ source $ZSH/oh-my-zsh.sh
 alias v=nvim 
 alias vi=nvim 
 alias vim=nvim 
+alias em="emacsclient -t -a ''"
 
 # Source scripts
 source ~/env.sh
@@ -123,6 +124,8 @@ source ~/.zshrc_local
 # PATH Appends
 export PATH=$PATH:~/.platformio/penv/bin
 export PATH=$PATH:/usr/local/opt/llvm/bin/
+export PATH=$PATH:~/.emacs.d/bin
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
@@ -131,3 +134,4 @@ his () {
   history | cut -c 8- | rg $1 | sort | uniq
 }
 
+eval "$(direnv hook zsh)"

@@ -8,3 +8,8 @@ ctags=/usr/local/bin/ctags
 export PATH=$PATH:/Applications/Racket\ v8.1/bin
 
 [ -f "/Users/satyam/.ghcup/env" ] && source "/Users/satyam/.ghcup/env" # ghcup-env
+
+# COMSOL - Matlab Livelink
+alias comsolserver="/Applications/COMSOL56/Multiphysics/bin/comsol mphserver"
+alias matsol="/Applications/MATLAB_R2021a.app/bin/matlab -r \"java.lang.System.setProperty('org.eclipse.jetty.LEVEL','WARN');cd '/Applications/COMSOL56/Multiphysics/mli';mphstart('localhost', 2037)\""
+

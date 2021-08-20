@@ -3,3 +3,10 @@
 	name = Satyam tiwary
 [color]
 	ui = auto
+[github]
+	user = satyamtiwary
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

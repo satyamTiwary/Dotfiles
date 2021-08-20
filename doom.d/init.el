@@ -25,20 +25,20 @@
         +childframe)      ; a nicer company UI. Emacs +26 only!
        helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       ivy               ; a search engine for love and life
-       ;;vertico           ; the search engine of the future
-       ;;
+       ;;ivy               ; a search engine for love and life
+       vertico           ; the search engine of the future
+
        :ui
        ;;deft              ; notational velocity for Emacs
        doom              ; what makes DOOM look the way it does
-       doom-dashboard    ; a nifty splash screen for Emacs
+       ;;doom-dashboard    ; a nifty splash screen for Emacs
        ;;doom-quit         ; DOOM quit-message prompts when you quit Emacs
        (emoji +unicode)  ; 🙂
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
        ;;indent-guides     ; highlighted indent columns
        ligatures         ; ligatures and symbols to make your code pretty again
-       minimap           ; show a map of the code on the side
+       ;;minimap           ; show a map of the code on the side
        modeline          ; snazzy, Atom-inspired modeline, plus API
        nav-flash         ; blink cursor line after big motions
        ;;neotree           ; a project drawer, like NERDTree for vim
@@ -47,7 +47,7 @@
        tabs              ; a tab bar for Emacs
        (treemacs          ; a project drawer, like neotree but cooler
         +icons)
-       ;;unicode           ; extended unicode support for various languages
+       unicode           ; extended unicode support for various languages
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
@@ -56,7 +56,7 @@
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
-       file-templates    ; auto-snippets for empty files
+       ;;file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
        (format +onsave)  ; automated prettiness
        ;;god               ; run Emacs commands without modifier keys
@@ -65,7 +65,7 @@
        ;;objed             ; text object editing for the innocent
        ;;parinfer          ; turn lisp into python, sort of
        rotate-text       ; cycle region at point between text candidates
-       snippets          ; my elves. They type so I don't have to
+       ;;snippets          ; my elves. They type so I don't have to
        ;;word-wrap         ; soft wrapping with language-aware indent
 
        :emacs
@@ -87,13 +87,13 @@
        :checkers
        (syntax              ; tasing you for every semicolon you forget
         +childframe)
-       (spell +flyspell) ; tasing you for misspelling mispelling
+       ;;(spell +flyspell) ; tasing you for misspelling mispelling
        grammar           ; tasing grammar mistake every you make
 
        :tools
        ;;ansible
        ;;debugger          ; FIXME stepping through code, to help you add bugs
-       direnv
+       ;;direnv
        (docker
         +lsp)
        ;;editorconfig      ; let someone else argue about tabs vs spaces
@@ -101,8 +101,9 @@
        (eval +overlay)     ; run code, run (also, repls)
        ;;gist              ; interacting with github gists
        (lookup              ; navigate your code and its documentation
-        +dictionary
+        ;;+dictionary
         +docsets
+        +dash
         +offline)
        lsp               ; M-x vscode
        (magit             ; a git porcelain for Emacs
@@ -150,7 +151,9 @@
        ;;idris             ; a language you can depend on
        (json +lsp)              ; At least it ain't XML
        ;;(java +meghanada) ; the poster child for carpal tunnel syndrome
-       (javascript +lsp +tide)       ; all(hope(abandon(ye(who(enter(here))))))
+       (javascript
+        +lsp
+        +tide)       ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        (latex             ; writing papers in Emacs has never been so fun
@@ -168,10 +171,10 @@
         +pretty
         +dragndrop
         +noter                      ; enhanced PDF notetaking
-        +jupyter                    ; ipython/jupyter support for babel
+        ;;+jupyter                    ; ipython/jupyter support for babel
         +pandoc                     ; export-with-pandoc support
-        +gnuplot                    ; who doesn't like pretty pictures
-        +present                    ; using org-mode for presentations
+        ;;+gnuplot                    ; who doesn't like pretty pictures
+        ;;+present                    ; using org-mode for presentations
         +roam2)                     ; wander around notes
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more

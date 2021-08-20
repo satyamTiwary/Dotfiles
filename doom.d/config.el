@@ -32,6 +32,28 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/Documents/Notes/org/")
 
+
+;; Run/highlight code using babel in org-mode
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (C . t)
+   (haskell . t)
+   (scheme . t)
+   (go . t)
+   (dot . t)
+   (python . t)
+   (ipython . t)
+   (sh . t)
+   (shell . t)
+   ))
+
+;; Syntax highlight in #+BEGIN_SRC blocks
+(setq org-src-fontify-natively t)
+;; Don't prompt before running code in org
+(setq org-confirm-babel-evaluate nil)
+;; Fix an incompatibility between the ob-async and ob-ipython packages
+(setq ob-async-no-async-languages-alist '("ipython"))
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
@@ -135,7 +157,7 @@
 (setq confirm-kill-emacs nil)
 
 ;; ** Modeline adjustments
-(setq doom-modeline-major-mode-icon t)
+;;(setq doom-modeline-major-mode-icon t)
 
 ;; ** lsp always show breadcrumb
 (setq lsp-headerline-breadcrumb-enable t)
@@ -145,16 +167,27 @@
  ;;doom-theme 'doom-gruvbox)
 
 ;; ** error in treemacs icons
-;;(doom-themes-treemacs-config)
-;;(after! treemacs
-  ;;(treemacs-load-theme "doom-colors"))
+(doom-themes-treemacs-config)
+(after! treemacs
+  (treemacs-load-theme "Default"))
+
+;; (treemacs-modify-theme "Default"
+;;   :config
+;;   (progn
+;;     (treemacs-create-icon :icon "(c)" :extensions (".c" ".h" ".cpp" ".hpp"))
+;;     (treemacs-create-icon :icon "[ci]" :extensions (".github" ".git"))
+;;     (treemacs-create-icon :icon "~" :extensions ("build" "CMakeLists.txt" "Kconfig" ".dts" ".overlay"))
+;;     (treemacs-create-icon :icon "=" :extensions (".md" ".cfg" ".yml" ".json" ".org"))
+;;     )
+;;   )
 
 ;; ** Outshine mini mode for all major modes
 ;;(add-hook 'prog-mode-hook 'outshine-mode)
 
 ;; ** Font
-;; (setq doom-font (font-spec :family "Dejavu Sans Mono" :size 15))
-(setq doom-font (font-spec :family "SF Mono Regular" :size 15))
+(setq doom-font (font-spec :family "Hasklug Mono" :size 15))
+;;(setq doom-font (font-spec :family "Dejavu Sans Mono" :size 15))
+;;(setq doom-font (font-spec :family "SF Mono Regular" :size 15))
 
 ;; * Keybinds
 ;; ;; ** Docker-compose
@@ -221,7 +254,7 @@
 ;;                 (dired-sort-other "-alh"))))))
 
 ;;(setq fancy-splash-image "~/Dotfiles/tcr-logo.png")
-
+(setq doom-themes-treemacs-theme "doom-colors")
 
 ;; https://github.com/tecosaur/emacs-config/blob/master/config.org
 (setq-default
@@ -263,3 +296,25 @@
       "C-<down>"       #'+evil/window-move-down
       "C-<up>"         #'+evil/window-move-up
       "C-<right>"      #'+evil/window-move-right)
+
+(require 'workgroups2)
+(workgroups-mode 1) ; This should go at the end of your init file
+
+;; https://emacs.stackexchange.com/questions/7233/setq-yas-snippet-dirs-not-working
+(yas-global-mode)
+
+;; Prettify it all
+(global-prettify-symbols-mode 1)
+
+(setq prettify-symbols-alist
+      '(
+        ("lambda" . 955) ; λ
+        ("map" . 8614)    ; ↦
+        ))
+
+(add-hook 'haskell-mode-hook 'my-add-pretty-lambda)
+;; (add-hook 'lisp-mode-hook 'my-add-pretty-lambda)
+(add-hook 'scheme-mode-hook 'my-add-pretty-lambda)
+
+
+(add-to-list 'auto-mode-alist '("Kconfig" . kconfig-mode))
