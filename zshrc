@@ -125,7 +125,7 @@ source ~/.zshrc_local
 export PATH=$PATH:~/.platformio/penv/bin
 export PATH=$PATH:/usr/local/opt/llvm/bin/
 export PATH=$PATH:~/.emacs.d/bin
-
+export PATH=$PATH:~/dev/flutter/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
